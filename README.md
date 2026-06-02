@@ -1,6 +1,6 @@
 # Hurtownia danych i analiza wielowymiarowa danych o filmach
 
-Projekt wykonany w ramach przedmiotu Wielowymiarowa analiza danych.
+Projekt wykonany w ramach przedmiotu Wielowymiarowa analiza danych. 
 
 ## Technologie
 
@@ -32,3 +32,5 @@ Relacje wiele-do-wielu obsługują tabele:
 ## Raport
 
 Dokumentacja projektu znajduje się w folderze `dokumentacja/`.
+
+Ze względu na rozmiar pliku dane źródłowe nie zostały dodane do repozytorium.
