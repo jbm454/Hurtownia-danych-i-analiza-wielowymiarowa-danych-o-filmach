@@ -1,0 +1,259 @@
+﻿<MiningStructure xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="6a0a45ea-a0b0-4514-b42f-3bbf0b346d19" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Mining_Clustering_Movies</ID>
+  <Name>Mining_Clustering_Movies</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:CaseTableName</Name>
+      <Value>dbo_v_mining_movies_clustering</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="83453595-6458-4d2d-b1bc-1a137bb59a65">
+    <DataSourceViewID>Imdb</DataSourceViewID>
+  </Source>
+  <Columns>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="e6a45296-2130-49e9-9fa6-4988865cb2ca">
+      <ID>Budget</ID>
+      <Name>Budget</Name>
+      <Type>Long</Type>
+      <Content>Continuous</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="ec73dcd1-b4f6-4fd7-815f-05a0e260993e">
+          <DataType>BigInt</DataType>
+          <DataSize>-1</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="f31e6f93-f390-4a54-a749-44670fd27220">
+            <TableID>dbo_v_mining_movies_clustering</TableID>
+            <ColumnID>budget</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="c7b0f0a9-d464-4f39-9e28-ba0cc4068b22">
+      <ID>Fact Id</ID>
+      <Name>Fact Id</Name>
+      <IsKey>true</IsKey>
+      <Type>Long</Type>
+      <Content>Key</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="e895742c-6571-4a04-b7f2-62cba587a7e0">
+          <DataType>Integer</DataType>
+          <DataSize>-1</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="4f7518c0-25a5-46b5-a80b-ee688d37fc45">
+            <TableID>dbo_v_mining_movies_clustering</TableID>
+            <ColumnID>fact_id</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="d71b413c-b19b-4ac3-8a15-51b00f79c7ec">
+      <ID>Language Code</ID>
+      <Name>Language Code</Name>
+      <Type>Text</Type>
+      <Content>Discrete</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="6849ec75-7cb5-472f-a107-1944be5fc2e1">
+          <DataType>WChar</DataType>
+          <DataSize>20</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="1e1135d0-6631-49b3-baed-401d73a22fee">
+            <TableID>dbo_v_mining_movies_clustering</TableID>
+            <ColumnID>language_code</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="b2c71a8d-50fa-4e9c-b570-46fc6188dd7a">
+      <ID>Popularity</ID>
+      <Name>Popularity</Name>
+      <Type>Double</Type>
+      <Content>Continuous</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="c4381f11-761b-44c0-a851-5b6db59566ce">
+          <DataType>Double</DataType>
+          <DataSize>-1</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="ec60fa89-bca3-4a0d-84aa-25c470225f4b">
+            <TableID>dbo_v_mining_movies_clustering</TableID>
+            <ColumnID>popularity</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="a282526d-34cf-4ea9-be28-71a79583713d">
+      <ID>Profit</ID>
+      <Name>Profit</Name>
+      <Type>Long</Type>
+      <Content>Continuous</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="3fd8c3ba-62d2-41f3-8089-55c6d0b44e2d">
+          <DataType>BigInt</DataType>
+          <DataSize>-1</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="02dc0df9-6c8b-4e3f-85ed-a4a0d9a6ec14">
+            <TableID>dbo_v_mining_movies_clustering</TableID>
+            <ColumnID>profit</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="8c3457c9-2098-49d3-9389-d68f04891935">
+      <ID>Revenue</ID>
+      <Name>Revenue</Name>
+      <Type>Long</Type>
+      <Content>Continuous</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="261ff375-9e6d-471f-9a9b-82ed98735724">
+          <DataType>BigInt</DataType>
+          <DataSize>-1</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="b403991c-e989-406a-8aaf-4da34a41fd99">
+            <TableID>dbo_v_mining_movies_clustering</TableID>
+            <ColumnID>revenue</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="807bd45c-0bb2-4760-a47e-2e8f594985a0">
+      <ID>Vote Average</ID>
+      <Name>Vote Average</Name>
+      <Type>Double</Type>
+      <Content>Continuous</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="c3615d0c-3e70-4282-86fd-94089b7d5712">
+          <DataType>Double</DataType>
+          <DataSize>-1</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="ad6a3d22-ba78-459e-ac69-841afd53d6f2">
+            <TableID>dbo_v_mining_movies_clustering</TableID>
+            <ColumnID>vote_average</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="9a1eb8d7-1754-4412-9586-96d37ad2716f">
+      <ID>Vote Count</ID>
+      <Name>Vote Count</Name>
+      <Type>Long</Type>
+      <Content>Continuous</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="3888f37f-fb75-48e9-a1f2-8f06999bf702">
+          <DataType>Integer</DataType>
+          <DataSize>-1</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="9aea4726-f097-4360-9cc9-0a182138559a">
+            <TableID>dbo_v_mining_movies_clustering</TableID>
+            <ColumnID>vote_count</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="256c338c-7324-43b4-90da-327e1d91b166">
+      <ID>Year</ID>
+      <Name>Year</Name>
+      <Type>Long</Type>
+      <Content>Continuous</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="d1bc27e7-0c3a-479a-a669-65e6ddbd98ec">
+          <DataType>Integer</DataType>
+          <DataSize>-1</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="e0ccca1c-2274-4d87-b9a2-f7553f4368d8">
+            <TableID>dbo_v_mining_movies_clustering</TableID>
+            <ColumnID>year</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+  </Columns>
+  <MiningModels>
+    <MiningModel dwd:design-time-name="a3f1082e-c695-4502-a6cb-cc41b9095371">
+      <ID>Model_Clustering_Movies</ID>
+      <Name>Model_Clustering_Movies</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Algorithm>Microsoft_Clustering</Algorithm>
+      <Columns>
+        <Column dwd:design-time-name="716b4a19-2382-4a40-b447-1d91d0fec7fd">
+          <ID>Budget</ID>
+          <Name>Budget</Name>
+          <SourceColumnID>Budget</SourceColumnID>
+        </Column>
+        <Column dwd:design-time-name="247c21ec-1979-40d4-988c-c4fcae8244c8">
+          <ID>Fact Id</ID>
+          <Name>Fact Id</Name>
+          <SourceColumnID>Fact Id</SourceColumnID>
+          <Usage>Key</Usage>
+        </Column>
+        <Column dwd:design-time-name="7d0ec98b-697a-41db-9fd2-68d50af80c97">
+          <ID>Language Code</ID>
+          <Name>Language Code</Name>
+          <SourceColumnID>Language Code</SourceColumnID>
+        </Column>
+        <Column dwd:design-time-name="f83c2a87-b20e-4c43-a840-875510e7b4f3">
+          <ID>Popularity</ID>
+          <Name>Popularity</Name>
+          <SourceColumnID>Popularity</SourceColumnID>
+        </Column>
+        <Column dwd:design-time-name="df99af39-7f41-4dc4-b4dc-127ad923ca22">
+          <ID>Profit</ID>
+          <Name>Profit</Name>
+          <SourceColumnID>Profit</SourceColumnID>
+        </Column>
+        <Column dwd:design-time-name="7ad6b85d-45cd-4795-b292-b40a9e4f154c">
+          <ID>Revenue</ID>
+          <Name>Revenue</Name>
+          <SourceColumnID>Revenue</SourceColumnID>
+        </Column>
+        <Column dwd:design-time-name="71dc846e-efe2-4fcf-a6a7-e4daff32c612">
+          <ID>Vote Average</ID>
+          <Name>Vote Average</Name>
+          <SourceColumnID>Vote Average</SourceColumnID>
+        </Column>
+        <Column dwd:design-time-name="79a1e889-da36-4b5b-b4f4-dc61a491fbc3">
+          <ID>Vote Count</ID>
+          <Name>Vote Count</Name>
+          <SourceColumnID>Vote Count</SourceColumnID>
+        </Column>
+        <Column dwd:design-time-name="1bc432b1-8c08-470b-a820-8d49ff7a5b5e">
+          <ID>Year</ID>
+          <Name>Year</Name>
+          <SourceColumnID>Year</SourceColumnID>
+        </Column>
+      </Columns>
+    </MiningModel>
+  </MiningModels>
+  <ddl100_100:HoldoutMaxPercent>30</ddl100_100:HoldoutMaxPercent>
+</MiningStructure>

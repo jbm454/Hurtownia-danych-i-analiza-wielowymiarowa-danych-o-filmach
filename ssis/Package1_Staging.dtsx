@@ -1,0 +1,2112 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="4/20/2026 9:57:57 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-IFD8LT5"
+  DTS:CreatorName="DESKTOP-IFD8LT5\Student"
+  DTS:DTSID="{3A9EA266-AD04-485D-BEDC-11EE239E082E}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.170"
+  DTS:LocaleID="1045"
+  DTS:ObjectName="Package1_Staging"
+  DTS:PackageType="5"
+  DTS:VersionBuild="36"
+  DTS:VersionGUID="{9ECBF8E7-0160-4B36-B2B2-9C42CE9D56E0}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[data_clean_csv]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{CBD8AF04-3913-4830-8D4E-EE596411BB3A}"
+      DTS:ObjectName="data_clean_csv">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x0022_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\Student\Downloads\movies_clean.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="id"
+              DTS:DTSID="{0861CA4B-339D-4573-9B8A-FE06A98FE5F8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="1000"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="title"
+              DTS:DTSID="{FBF27354-7F1B-45D6-B0EB-21F14BCB10D1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="20"
+              DTS:TextQualified="True"
+              DTS:ObjectName="vote_average"
+              DTS:DTSID="{099BC6B9-F2EF-42B6-9F4B-2D53CE89DF04}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="vote_count"
+              DTS:DTSID="{32F7AA6E-FFA9-44AE-9780-CC62BC895E31}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="status"
+              DTS:DTSID="{B901CA5F-C027-4DE3-8187-2BD551B5E840}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="133"
+              DTS:TextQualified="True"
+              DTS:ObjectName="release_date"
+              DTS:DTSID="{2661BF02-5F71-4E57-9341-0BBD8AF24064}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="revenue"
+              DTS:DTSID="{5A72A407-5B1E-4C45-BA0E-8B41F3BD0374}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="runtime"
+              DTS:DTSID="{14BBDB18-867C-412A-AAB0-AF3B49227F35}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="budget"
+              DTS:DTSID="{8E9B6E70-F300-43B3-B7AE-B56980EF6605}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="original_language"
+              DTS:DTSID="{20585152-94C6-4BBD-886C-2ACFB253584E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="1000"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="original_title"
+              DTS:DTSID="{812381D4-334A-4964-A716-CBE2DB8A5121}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="8000"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="overview"
+              DTS:DTSID="{E774343B-33F7-4520-8C8C-50001710E22E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="20"
+              DTS:TextQualified="True"
+              DTS:ObjectName="popularity"
+              DTS:DTSID="{234349FA-C997-4B0A-9058-1713958B2443}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="tagline"
+              DTS:DTSID="{516D7EFD-5A7F-40C8-A602-0AB6B1DEE9D1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="genres"
+              DTS:DTSID="{51999B9F-CF39-4F22-BD75-DE8D2BADAE72}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="production_companies"
+              DTS:DTSID="{2FDB1182-679E-424F-9090-4877B7DADC14}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="production_countries"
+              DTS:DTSID="{EA9A2A4E-24BA-4F10-B654-04F6BCF422A7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="spoken_languages"
+              DTS:DTSID="{DFF130BB-6A4C-4AF0-B8E9-732FC5795DBD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000A_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="keywords"
+              DTS:DTSID="{A22419EC-F529-41E0-BDBE-C9503FB56FA1}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-IFD8LT5\WAD.imdb]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{32D0AD9E-EE7A-4170-BBD6-E57AC9F4DA86}"
+      DTS:ObjectName="DESKTOP-IFD8LT5\WAD.imdb">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-IFD8LT5\WAD;Initial Catalog=imdb;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\176774 Czyszczenie wymiarów podstawowych"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{FD6337AC-88C3-4484-AAE8-1B94B69AB7F3}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="176774 Czyszczenie wymiarów podstawowych"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{32D0AD9E-EE7A-4170-BBD6-E57AC9F4DA86}"
+          SQLTask:BypassPrepare="False"
+          SQLTask:SqlStatementSource="DELETE FROM bridge_movie_country;&#xA;DELETE FROM bridge_movie_genre;&#xA;DELETE FROM fact_movies;&#xA;&#xA;DELETE FROM dim_movie;&#xA;DELETE FROM dim_status;&#xA;DELETE FROM dim_language;&#xA;DELETE FROM dim_date;&#xA;&#xA;DBCC CHECKIDENT ('fact_movies', RESEED, 0);&#xA;DBCC CHECKIDENT ('dim_movie', RESEED, 0);&#xA;DBCC CHECKIDENT ('dim_status', RESEED, 0);&#xA;DBCC CHECKIDENT ('dim_language', RESEED, 0);&#xA;DBCC CHECKIDENT ('dim_date', RESEED, 0);" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\176774 Import CSV do Staging"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{FF5849EE-BF8E-452B-AF09-1AEEBD9D4BD0}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="176774 Import CSV do Staging"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\176774 Import CSV do Staging\Data Conversion"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Data Conversion"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\176774 Import CSV do Staging\Data Conversion.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\176774 Import CSV do Staging\Data Conversion.Inputs[Data Conversion Input].Columns[title]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1000"
+                      cachedName="title"
+                      lineageId="Package\176774 Import CSV do Staging\Flat File Source.Outputs[Flat File Source Output].Columns[title]" />
+                    <inputColumn
+                      refId="Package\176774 Import CSV do Staging\Data Conversion.Inputs[Data Conversion Input].Columns[original_title]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1000"
+                      cachedName="original_title"
+                      lineageId="Package\176774 Import CSV do Staging\Flat File Source.Outputs[Flat File Source Output].Columns[original_title]" />
+                    <inputColumn
+                      refId="Package\176774 Import CSV do Staging\Data Conversion.Inputs[Data Conversion Input].Columns[original_language]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="original_language"
+                      lineageId="Package\176774 Import CSV do Staging\Flat File Source.Outputs[Flat File Source Output].Columns[original_language]" />
+                    <inputColumn
+                      refId="Package\176774 Import CSV do Staging\Data Conversion.Inputs[Data Conversion Input].Columns[genres]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="4000"
+                      cachedName="genres"
+                      lineageId="Package\176774 Import CSV do Staging\Flat File Source.Outputs[Flat File Source Output].Columns[genres]" />
+                    <inputColumn
+                      refId="Package\176774 Import CSV do Staging\Data Conversion.Inputs[Data Conversion Input].Columns[overview]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="8000"
+                      cachedName="overview"
+                      lineageId="Package\176774 Import CSV do Staging\Flat File Source.Outputs[Flat File Source Output].Columns[overview]" />
+                    <inputColumn
+                      refId="Package\176774 Import CSV do Staging\Data Conversion.Inputs[Data Conversion Input].Columns[tagline]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="4000"
+                      cachedName="tagline"
+                      lineageId="Package\176774 Import CSV do Staging\Flat File Source.Outputs[Flat File Source Output].Columns[tagline]" />
+                    <inputColumn
+                      refId="Package\176774 Import CSV do Staging\Data Conversion.Inputs[Data Conversion Input].Columns[production_companies]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="4000"
+                      cachedName="production_companies"
+                      lineageId="Package\176774 Import CSV do Staging\Flat File Source.Outputs[Flat File Source Output].Columns[production_companies]" />
+                    <inputColumn
+                      refId="Package\176774 Import CSV do Staging\Data Conversion.Inputs[Data Conversion Input].Columns[production_countries]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="4000"
+                      cachedName="production_countries"
+                      lineageId="Package\176774 Import CSV do Staging\Flat File Source.Outputs[Flat File Source Output].Columns[production_countries]" />
+                    <inputColumn
+                      refId="Package\176774 Import CSV do Staging\Data Conversion.Inputs[Data Conversion Input].Columns[spoken_languages]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="4000"
+                      cachedName="spoken_languages"
+                      lineageId="Package\176774 Import CSV do Staging\Flat File Source.Outputs[Flat File Source Output].Columns[spoken_languages]" />
+                    <inputColumn
+                      refId="Package\176774 Import CSV do Staging\Data Conversion.Inputs[Data Conversion Input].Columns[keywords]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="4000"
+                      cachedName="keywords"
+                      lineageId="Package\176774 Import CSV do Staging\Flat File Source.Outputs[Flat File Source Output].Columns[keywords]" />
+                    <inputColumn
+                      refId="Package\176774 Import CSV do Staging\Data Conversion.Inputs[Data Conversion Input].Columns[status]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="status"
+                      lineageId="Package\176774 Import CSV do Staging\Flat File Source.Outputs[Flat File Source Output].Columns[status]" />
+                    <inputColumn
+                      refId="Package\176774 Import CSV do Staging\Data Conversion.Inputs[Data Conversion Input].Columns[budget]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="budget"
+                      lineageId="Package\176774 Import CSV do Staging\Flat File Source.Outputs[Flat File Source Output].Columns[budget]" />
+                    <inputColumn
+                      refId="Package\176774 Import CSV do Staging\Data Conversion.Inputs[Data Conversion Input].Columns[revenue]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="revenue"
+                      lineageId="Package\176774 Import CSV do Staging\Flat File Source.Outputs[Flat File Source Output].Columns[revenue]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\176774 Import CSV do Staging\Data Conversion.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\176774 Import CSV do Staging\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\176774 Import CSV do Staging\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of title]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="1000"
+                      lineageId="Package\176774 Import CSV do Staging\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of title]"
+                      name="Copy of title"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\176774 Import CSV do Staging\Flat File Source.Outputs[Flat File Source Output].Columns[title]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\176774 Import CSV do Staging\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of original_title]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="1000"
+                      lineageId="Package\176774 Import CSV do Staging\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of original_title]"
+                      name="Copy of original_title"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\176774 Import CSV do Staging\Flat File Source.Outputs[Flat File Source Output].Columns[original_title]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\176774 Import CSV do Staging\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of original_language]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\176774 Import CSV do Staging\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of original_language]"
+                      name="Copy of original_language"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\176774 Import CSV do Staging\Flat File Source.Outputs[Flat File Source Output].Columns[original_language]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\176774 Import CSV do Staging\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of genres]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="4000"
+                      lineageId="Package\176774 Import CSV do Staging\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of genres]"
+                      name="Copy of genres"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\176774 Import CSV do Staging\Flat File Source.Outputs[Flat File Source Output].Columns[genres]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\176774 Import CSV do Staging\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of overview]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="4000"
+                      lineageId="Package\176774 Import CSV do Staging\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of overview]"
+                      name="Copy of overview"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\176774 Import CSV do Staging\Flat File Source.Outputs[Flat File Source Output].Columns[overview]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\176774 Import CSV do Staging\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of tagline]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="4000"
+                      lineageId="Package\176774 Import CSV do Staging\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of tagline]"
+                      name="Copy of tagline"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\176774 Import CSV do Staging\Flat File Source.Outputs[Flat File Source Output].Columns[tagline]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\176774 Import CSV do Staging\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of production_companies]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="4000"
+                      lineageId="Package\176774 Import CSV do Staging\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of production_companies]"
+                      name="Copy of production_companies"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\176774 Import CSV do Staging\Flat File Source.Outputs[Flat File Source Output].Columns[production_companies]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\176774 Import CSV do Staging\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of production_countries]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="4000"
+                      lineageId="Package\176774 Import CSV do Staging\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of production_countries]"
+                      name="Copy of production_countries"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\176774 Import CSV do Staging\Flat File Source.Outputs[Flat File Source Output].Columns[production_countries]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\176774 Import CSV do Staging\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of spoken_languages]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="4000"
+                      lineageId="Package\176774 Import CSV do Staging\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of spoken_languages]"
+                      name="Copy of spoken_languages"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\176774 Import CSV do Staging\Flat File Source.Outputs[Flat File Source Output].Columns[spoken_languages]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\176774 Import CSV do Staging\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of keywords]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="4000"
+                      lineageId="Package\176774 Import CSV do Staging\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of keywords]"
+                      name="Copy of keywords"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\176774 Import CSV do Staging\Flat File Source.Outputs[Flat File Source Output].Columns[keywords]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\176774 Import CSV do Staging\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of status]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\176774 Import CSV do Staging\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of status]"
+                      name="Copy of status"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\176774 Import CSV do Staging\Flat File Source.Outputs[Flat File Source Output].Columns[status]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\176774 Import CSV do Staging\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of budget]"
+                      dataType="i8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\176774 Import CSV do Staging\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of budget]"
+                      name="Copy of budget"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\176774 Import CSV do Staging\Flat File Source.Outputs[Flat File Source Output].Columns[budget]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\176774 Import CSV do Staging\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of revenue]"
+                      dataType="i8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\176774 Import CSV do Staging\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of revenue]"
+                      name="Copy of revenue"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\176774 Import CSV do Staging\Flat File Source.Outputs[Flat File Source Output].Columns[revenue]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\176774 Import CSV do Staging\Data Conversion.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\176774 Import CSV do Staging\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\176774 Import CSV do Staging\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\176774 Import CSV do Staging\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\176774 Import CSV do Staging\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\176774 Import CSV do Staging\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\176774 Import CSV do Staging\Derived Column"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\176774 Import CSV do Staging\Derived Column.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\176774 Import CSV do Staging\Derived Column.Inputs[Derived Column Input].Columns[revenue]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="revenue"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\176774 Import CSV do Staging\Flat File Source.Outputs[Flat File Source Output].Columns[revenue]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">#{Package\176774 Import CSV do Staging\Flat File Source.Outputs[Flat File Source Output].Columns[revenue]} == "NA" ? NULL(DT_WSTR,50) : #{Package\176774 Import CSV do Staging\Flat File Source.Outputs[Flat File Source Output].Columns[revenue]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">revenue == "NA" ? NULL(DT_WSTR,50) : revenue</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\176774 Import CSV do Staging\Derived Column.Inputs[Derived Column Input].Columns[budget]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="budget"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\176774 Import CSV do Staging\Flat File Source.Outputs[Flat File Source Output].Columns[budget]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">#{Package\176774 Import CSV do Staging\Flat File Source.Outputs[Flat File Source Output].Columns[budget]} == "NA" ? NULL(DT_WSTR,50) : #{Package\176774 Import CSV do Staging\Flat File Source.Outputs[Flat File Source Output].Columns[budget]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">budget == "NA" ? NULL(DT_WSTR,50) : budget</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\176774 Import CSV do Staging\Derived Column.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\176774 Import CSV do Staging\Derived Column.Inputs[Derived Column Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\176774 Import CSV do Staging\Derived Column.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\176774 Import CSV do Staging\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\176774 Import CSV do Staging\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\176774 Import CSV do Staging\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\176774 Import CSV do Staging\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\176774 Import CSV do Staging\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\176774 Import CSV do Staging\Flat File Source"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1033"
+              name="Flat File Source"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\176774 Import CSV do Staging\Flat File Source.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[data_clean_csv]"
+                  connectionManagerRefId="Package.ConnectionManagers[data_clean_csv]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\176774 Import CSV do Staging\Flat File Source.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\176774 Import CSV do Staging\Flat File Source.Outputs[Flat File Source Output].Columns[id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\176774 Import CSV do Staging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[id]"
+                      lineageId="Package\176774 Import CSV do Staging\Flat File Source.Outputs[Flat File Source Output].Columns[id]"
+                      name="id"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\176774 Import CSV do Staging\Flat File Source.Outputs[Flat File Source Output].Columns[title]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\176774 Import CSV do Staging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[title]"
+                      length="1000"
+                      lineageId="Package\176774 Import CSV do Staging\Flat File Source.Outputs[Flat File Source Output].Columns[title]"
+                      name="title"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\176774 Import CSV do Staging\Flat File Source.Outputs[Flat File Source Output].Columns[vote_average]"
+                      dataType="i8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\176774 Import CSV do Staging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[vote_average]"
+                      lineageId="Package\176774 Import CSV do Staging\Flat File Source.Outputs[Flat File Source Output].Columns[vote_average]"
+                      name="vote_average"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\176774 Import CSV do Staging\Flat File Source.Outputs[Flat File Source Output].Columns[vote_count]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\176774 Import CSV do Staging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[vote_count]"
+                      lineageId="Package\176774 Import CSV do Staging\Flat File Source.Outputs[Flat File Source Output].Columns[vote_count]"
+                      name="vote_count"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\176774 Import CSV do Staging\Flat File Source.Outputs[Flat File Source Output].Columns[status]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\176774 Import CSV do Staging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[status]"
+                      length="255"
+                      lineageId="Package\176774 Import CSV do Staging\Flat File Source.Outputs[Flat File Source Output].Columns[status]"
+                      name="status"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\176774 Import CSV do Staging\Flat File Source.Outputs[Flat File Source Output].Columns[release_date]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\176774 Import CSV do Staging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[release_date]"
+                      lineageId="Package\176774 Import CSV do Staging\Flat File Source.Outputs[Flat File Source Output].Columns[release_date]"
+                      name="release_date"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\176774 Import CSV do Staging\Flat File Source.Outputs[Flat File Source Output].Columns[revenue]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\176774 Import CSV do Staging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[revenue]"
+                      length="50"
+                      lineageId="Package\176774 Import CSV do Staging\Flat File Source.Outputs[Flat File Source Output].Columns[revenue]"
+                      name="revenue"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\176774 Import CSV do Staging\Flat File Source.Outputs[Flat File Source Output].Columns[runtime]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\176774 Import CSV do Staging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[runtime]"
+                      length="50"
+                      lineageId="Package\176774 Import CSV do Staging\Flat File Source.Outputs[Flat File Source Output].Columns[runtime]"
+                      name="runtime"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\176774 Import CSV do Staging\Flat File Source.Outputs[Flat File Source Output].Columns[budget]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\176774 Import CSV do Staging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[budget]"
+                      length="50"
+                      lineageId="Package\176774 Import CSV do Staging\Flat File Source.Outputs[Flat File Source Output].Columns[budget]"
+                      name="budget"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\176774 Import CSV do Staging\Flat File Source.Outputs[Flat File Source Output].Columns[original_language]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\176774 Import CSV do Staging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[original_language]"
+                      length="255"
+                      lineageId="Package\176774 Import CSV do Staging\Flat File Source.Outputs[Flat File Source Output].Columns[original_language]"
+                      name="original_language"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\176774 Import CSV do Staging\Flat File Source.Outputs[Flat File Source Output].Columns[original_title]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\176774 Import CSV do Staging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[original_title]"
+                      length="1000"
+                      lineageId="Package\176774 Import CSV do Staging\Flat File Source.Outputs[Flat File Source Output].Columns[original_title]"
+                      name="original_title"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\176774 Import CSV do Staging\Flat File Source.Outputs[Flat File Source Output].Columns[overview]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\176774 Import CSV do Staging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[overview]"
+                      length="8000"
+                      lineageId="Package\176774 Import CSV do Staging\Flat File Source.Outputs[Flat File Source Output].Columns[overview]"
+                      name="overview"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\176774 Import CSV do Staging\Flat File Source.Outputs[Flat File Source Output].Columns[popularity]"
+                      dataType="i8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\176774 Import CSV do Staging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[popularity]"
+                      lineageId="Package\176774 Import CSV do Staging\Flat File Source.Outputs[Flat File Source Output].Columns[popularity]"
+                      name="popularity"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\176774 Import CSV do Staging\Flat File Source.Outputs[Flat File Source Output].Columns[tagline]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\176774 Import CSV do Staging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[tagline]"
+                      length="4000"
+                      lineageId="Package\176774 Import CSV do Staging\Flat File Source.Outputs[Flat File Source Output].Columns[tagline]"
+                      name="tagline"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\176774 Import CSV do Staging\Flat File Source.Outputs[Flat File Source Output].Columns[genres]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\176774 Import CSV do Staging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[genres]"
+                      length="4000"
+                      lineageId="Package\176774 Import CSV do Staging\Flat File Source.Outputs[Flat File Source Output].Columns[genres]"
+                      name="genres"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\176774 Import CSV do Staging\Flat File Source.Outputs[Flat File Source Output].Columns[production_companies]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\176774 Import CSV do Staging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[production_companies]"
+                      length="4000"
+                      lineageId="Package\176774 Import CSV do Staging\Flat File Source.Outputs[Flat File Source Output].Columns[production_companies]"
+                      name="production_companies"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\176774 Import CSV do Staging\Flat File Source.Outputs[Flat File Source Output].Columns[production_countries]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\176774 Import CSV do Staging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[production_countries]"
+                      length="4000"
+                      lineageId="Package\176774 Import CSV do Staging\Flat File Source.Outputs[Flat File Source Output].Columns[production_countries]"
+                      name="production_countries"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\176774 Import CSV do Staging\Flat File Source.Outputs[Flat File Source Output].Columns[spoken_languages]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\176774 Import CSV do Staging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[spoken_languages]"
+                      length="4000"
+                      lineageId="Package\176774 Import CSV do Staging\Flat File Source.Outputs[Flat File Source Output].Columns[spoken_languages]"
+                      name="spoken_languages"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\176774 Import CSV do Staging\Flat File Source.Outputs[Flat File Source Output].Columns[keywords]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\176774 Import CSV do Staging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[keywords]"
+                      length="4000"
+                      lineageId="Package\176774 Import CSV do Staging\Flat File Source.Outputs[Flat File Source Output].Columns[keywords]"
+                      name="keywords"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\176774 Import CSV do Staging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[id]"
+                      dataType="i4"
+                      name="id" />
+                    <externalMetadataColumn
+                      refId="Package\176774 Import CSV do Staging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[title]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1000"
+                      name="title" />
+                    <externalMetadataColumn
+                      refId="Package\176774 Import CSV do Staging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[vote_average]"
+                      dataType="i8"
+                      name="vote_average" />
+                    <externalMetadataColumn
+                      refId="Package\176774 Import CSV do Staging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[vote_count]"
+                      dataType="i4"
+                      name="vote_count" />
+                    <externalMetadataColumn
+                      refId="Package\176774 Import CSV do Staging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[status]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="status" />
+                    <externalMetadataColumn
+                      refId="Package\176774 Import CSV do Staging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[release_date]"
+                      dataType="dbDate"
+                      name="release_date" />
+                    <externalMetadataColumn
+                      refId="Package\176774 Import CSV do Staging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[revenue]"
+                      dataType="wstr"
+                      length="50"
+                      name="revenue" />
+                    <externalMetadataColumn
+                      refId="Package\176774 Import CSV do Staging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[runtime]"
+                      dataType="wstr"
+                      length="50"
+                      name="runtime" />
+                    <externalMetadataColumn
+                      refId="Package\176774 Import CSV do Staging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[budget]"
+                      dataType="wstr"
+                      length="50"
+                      name="budget" />
+                    <externalMetadataColumn
+                      refId="Package\176774 Import CSV do Staging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[original_language]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="original_language" />
+                    <externalMetadataColumn
+                      refId="Package\176774 Import CSV do Staging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[original_title]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1000"
+                      name="original_title" />
+                    <externalMetadataColumn
+                      refId="Package\176774 Import CSV do Staging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[overview]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8000"
+                      name="overview" />
+                    <externalMetadataColumn
+                      refId="Package\176774 Import CSV do Staging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[popularity]"
+                      dataType="i8"
+                      name="popularity" />
+                    <externalMetadataColumn
+                      refId="Package\176774 Import CSV do Staging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[tagline]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4000"
+                      name="tagline" />
+                    <externalMetadataColumn
+                      refId="Package\176774 Import CSV do Staging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[genres]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4000"
+                      name="genres" />
+                    <externalMetadataColumn
+                      refId="Package\176774 Import CSV do Staging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[production_companies]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4000"
+                      name="production_companies" />
+                    <externalMetadataColumn
+                      refId="Package\176774 Import CSV do Staging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[production_countries]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4000"
+                      name="production_countries" />
+                    <externalMetadataColumn
+                      refId="Package\176774 Import CSV do Staging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[spoken_languages]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4000"
+                      name="spoken_languages" />
+                    <externalMetadataColumn
+                      refId="Package\176774 Import CSV do Staging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[keywords]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4000"
+                      name="keywords" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\176774 Import CSV do Staging\Flat File Source.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\176774 Import CSV do Staging\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="65001"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\176774 Import CSV do Staging\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\176774 Import CSV do Staging\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\176774 Import CSV do Staging\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\176774 Import CSV do Staging\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\176774 Import CSV do Staging\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\176774 Import CSV do Staging\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[staging_movies]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1250</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\176774 Import CSV do Staging\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-IFD8LT5\WAD.imdb]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-IFD8LT5\WAD.imdb]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\176774 Import CSV do Staging\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\176774 Import CSV do Staging\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[id]"
+                      cachedDataType="i4"
+                      cachedName="id"
+                      externalMetadataColumnId="Package\176774 Import CSV do Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[id]"
+                      lineageId="Package\176774 Import CSV do Staging\Flat File Source.Outputs[Flat File Source Output].Columns[id]" />
+                    <inputColumn
+                      refId="Package\176774 Import CSV do Staging\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[vote_average]"
+                      cachedDataType="i8"
+                      cachedName="vote_average"
+                      externalMetadataColumnId="Package\176774 Import CSV do Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[vote_average]"
+                      lineageId="Package\176774 Import CSV do Staging\Flat File Source.Outputs[Flat File Source Output].Columns[vote_average]" />
+                    <inputColumn
+                      refId="Package\176774 Import CSV do Staging\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[vote_count]"
+                      cachedDataType="i4"
+                      cachedName="vote_count"
+                      externalMetadataColumnId="Package\176774 Import CSV do Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[vote_count]"
+                      lineageId="Package\176774 Import CSV do Staging\Flat File Source.Outputs[Flat File Source Output].Columns[vote_count]" />
+                    <inputColumn
+                      refId="Package\176774 Import CSV do Staging\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[release_date]"
+                      cachedDataType="dbDate"
+                      cachedName="release_date"
+                      externalMetadataColumnId="Package\176774 Import CSV do Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[release_date]"
+                      lineageId="Package\176774 Import CSV do Staging\Flat File Source.Outputs[Flat File Source Output].Columns[release_date]" />
+                    <inputColumn
+                      refId="Package\176774 Import CSV do Staging\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[runtime]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="runtime"
+                      externalMetadataColumnId="Package\176774 Import CSV do Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[runtime]"
+                      lineageId="Package\176774 Import CSV do Staging\Flat File Source.Outputs[Flat File Source Output].Columns[runtime]" />
+                    <inputColumn
+                      refId="Package\176774 Import CSV do Staging\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[popularity]"
+                      cachedDataType="i8"
+                      cachedName="popularity"
+                      externalMetadataColumnId="Package\176774 Import CSV do Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[popularity]"
+                      lineageId="Package\176774 Import CSV do Staging\Flat File Source.Outputs[Flat File Source Output].Columns[popularity]" />
+                    <inputColumn
+                      refId="Package\176774 Import CSV do Staging\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of title]"
+                      cachedDataType="wstr"
+                      cachedLength="1000"
+                      cachedName="Copy of title"
+                      externalMetadataColumnId="Package\176774 Import CSV do Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[title]"
+                      lineageId="Package\176774 Import CSV do Staging\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of title]" />
+                    <inputColumn
+                      refId="Package\176774 Import CSV do Staging\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of original_title]"
+                      cachedDataType="wstr"
+                      cachedLength="1000"
+                      cachedName="Copy of original_title"
+                      externalMetadataColumnId="Package\176774 Import CSV do Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[original_title]"
+                      lineageId="Package\176774 Import CSV do Staging\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of original_title]" />
+                    <inputColumn
+                      refId="Package\176774 Import CSV do Staging\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of status]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Copy of status"
+                      externalMetadataColumnId="Package\176774 Import CSV do Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[status]"
+                      lineageId="Package\176774 Import CSV do Staging\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of status]" />
+                    <inputColumn
+                      refId="Package\176774 Import CSV do Staging\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of keywords]"
+                      cachedDataType="wstr"
+                      cachedLength="4000"
+                      cachedName="Copy of keywords"
+                      externalMetadataColumnId="Package\176774 Import CSV do Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[keywords]"
+                      lineageId="Package\176774 Import CSV do Staging\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of keywords]" />
+                    <inputColumn
+                      refId="Package\176774 Import CSV do Staging\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of spoken_languages]"
+                      cachedDataType="wstr"
+                      cachedLength="4000"
+                      cachedName="Copy of spoken_languages"
+                      externalMetadataColumnId="Package\176774 Import CSV do Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[spoken_languages]"
+                      lineageId="Package\176774 Import CSV do Staging\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of spoken_languages]" />
+                    <inputColumn
+                      refId="Package\176774 Import CSV do Staging\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of production_countries]"
+                      cachedDataType="wstr"
+                      cachedLength="4000"
+                      cachedName="Copy of production_countries"
+                      externalMetadataColumnId="Package\176774 Import CSV do Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[production_countries]"
+                      lineageId="Package\176774 Import CSV do Staging\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of production_countries]" />
+                    <inputColumn
+                      refId="Package\176774 Import CSV do Staging\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of production_companies]"
+                      cachedDataType="wstr"
+                      cachedLength="4000"
+                      cachedName="Copy of production_companies"
+                      externalMetadataColumnId="Package\176774 Import CSV do Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[production_companies]"
+                      lineageId="Package\176774 Import CSV do Staging\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of production_companies]" />
+                    <inputColumn
+                      refId="Package\176774 Import CSV do Staging\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of tagline]"
+                      cachedDataType="wstr"
+                      cachedLength="4000"
+                      cachedName="Copy of tagline"
+                      externalMetadataColumnId="Package\176774 Import CSV do Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[tagline]"
+                      lineageId="Package\176774 Import CSV do Staging\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of tagline]" />
+                    <inputColumn
+                      refId="Package\176774 Import CSV do Staging\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of overview]"
+                      cachedDataType="wstr"
+                      cachedLength="4000"
+                      cachedName="Copy of overview"
+                      externalMetadataColumnId="Package\176774 Import CSV do Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[overview]"
+                      lineageId="Package\176774 Import CSV do Staging\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of overview]" />
+                    <inputColumn
+                      refId="Package\176774 Import CSV do Staging\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of genres]"
+                      cachedDataType="wstr"
+                      cachedLength="4000"
+                      cachedName="Copy of genres"
+                      externalMetadataColumnId="Package\176774 Import CSV do Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[genres]"
+                      lineageId="Package\176774 Import CSV do Staging\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of genres]" />
+                    <inputColumn
+                      refId="Package\176774 Import CSV do Staging\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of original_language]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Copy of original_language"
+                      externalMetadataColumnId="Package\176774 Import CSV do Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[original_language]"
+                      lineageId="Package\176774 Import CSV do Staging\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of original_language]" />
+                    <inputColumn
+                      refId="Package\176774 Import CSV do Staging\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of budget]"
+                      cachedDataType="i8"
+                      cachedName="Copy of budget"
+                      externalMetadataColumnId="Package\176774 Import CSV do Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[budget]"
+                      lineageId="Package\176774 Import CSV do Staging\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of budget]" />
+                    <inputColumn
+                      refId="Package\176774 Import CSV do Staging\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of revenue]"
+                      cachedDataType="i8"
+                      cachedName="Copy of revenue"
+                      externalMetadataColumnId="Package\176774 Import CSV do Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[revenue]"
+                      lineageId="Package\176774 Import CSV do Staging\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of revenue]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\176774 Import CSV do Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[id]"
+                      dataType="i4"
+                      name="id" />
+                    <externalMetadataColumn
+                      refId="Package\176774 Import CSV do Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[title]"
+                      dataType="wstr"
+                      length="1000"
+                      name="title" />
+                    <externalMetadataColumn
+                      refId="Package\176774 Import CSV do Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[original_title]"
+                      dataType="wstr"
+                      length="1000"
+                      name="original_title" />
+                    <externalMetadataColumn
+                      refId="Package\176774 Import CSV do Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[release_date]"
+                      dataType="dbDate"
+                      name="release_date" />
+                    <externalMetadataColumn
+                      refId="Package\176774 Import CSV do Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[budget]"
+                      dataType="i8"
+                      name="budget" />
+                    <externalMetadataColumn
+                      refId="Package\176774 Import CSV do Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[revenue]"
+                      dataType="i8"
+                      name="revenue" />
+                    <externalMetadataColumn
+                      refId="Package\176774 Import CSV do Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[vote_average]"
+                      dataType="r8"
+                      name="vote_average" />
+                    <externalMetadataColumn
+                      refId="Package\176774 Import CSV do Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[vote_count]"
+                      dataType="i4"
+                      name="vote_count" />
+                    <externalMetadataColumn
+                      refId="Package\176774 Import CSV do Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[popularity]"
+                      dataType="r8"
+                      name="popularity" />
+                    <externalMetadataColumn
+                      refId="Package\176774 Import CSV do Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[runtime]"
+                      dataType="r8"
+                      name="runtime" />
+                    <externalMetadataColumn
+                      refId="Package\176774 Import CSV do Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[original_language]"
+                      dataType="wstr"
+                      length="20"
+                      name="original_language" />
+                    <externalMetadataColumn
+                      refId="Package\176774 Import CSV do Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[genres]"
+                      dataType="wstr"
+                      length="4000"
+                      name="genres" />
+                    <externalMetadataColumn
+                      refId="Package\176774 Import CSV do Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[overview]"
+                      dataType="nText"
+                      name="overview" />
+                    <externalMetadataColumn
+                      refId="Package\176774 Import CSV do Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[tagline]"
+                      dataType="wstr"
+                      length="4000"
+                      name="tagline" />
+                    <externalMetadataColumn
+                      refId="Package\176774 Import CSV do Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[production_companies]"
+                      dataType="wstr"
+                      length="4000"
+                      name="production_companies" />
+                    <externalMetadataColumn
+                      refId="Package\176774 Import CSV do Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[production_countries]"
+                      dataType="wstr"
+                      length="4000"
+                      name="production_countries" />
+                    <externalMetadataColumn
+                      refId="Package\176774 Import CSV do Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[spoken_languages]"
+                      dataType="wstr"
+                      length="4000"
+                      name="spoken_languages" />
+                    <externalMetadataColumn
+                      refId="Package\176774 Import CSV do Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[keywords]"
+                      dataType="wstr"
+                      length="4000"
+                      name="keywords" />
+                    <externalMetadataColumn
+                      refId="Package\176774 Import CSV do Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[status]"
+                      dataType="wstr"
+                      length="50"
+                      name="status" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\176774 Import CSV do Staging\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\176774 Import CSV do Staging\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\176774 Import CSV do Staging\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\176774 Import CSV do Staging\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\176774 Import CSV do Staging\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\176774 Import CSV do Staging\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\176774 Import CSV do Staging.Paths[Data Conversion Output]"
+              endId="Package\176774 Import CSV do Staging\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Data Conversion Output"
+              startId="Package\176774 Import CSV do Staging\Data Conversion.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\176774 Import CSV do Staging.Paths[Derived Column Output]"
+              endId="Package\176774 Import CSV do Staging\Data Conversion.Inputs[Data Conversion Input]"
+              name="Derived Column Output"
+              startId="Package\176774 Import CSV do Staging\Derived Column.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\176774 Import CSV do Staging.Paths[Flat File Source Output]"
+              endId="Package\176774 Import CSV do Staging\Derived Column.Inputs[Derived Column Input]"
+              name="Flat File Source Output"
+              startId="Package\176774 Import CSV do Staging\Flat File Source.Outputs[Flat File Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\176774 Ładowanie dim_date"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{D0D6A170-2A7F-4E53-B78E-2ADEE0BA0FFB}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="176774 Ładowanie dim_date"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{32D0AD9E-EE7A-4170-BBD6-E57AC9F4DA86}"
+          SQLTask:BypassPrepare="False"
+          SQLTask:SqlStatementSource="INSERT INTO dim_date (full_date, year, month, day, quarter)&#xA;SELECT DISTINCT&#xA;    release_date AS full_date,&#xA;    YEAR(release_date) AS year,&#xA;    MONTH(release_date) AS month,&#xA;    DAY(release_date) AS day,&#xA;    DATEPART(QUARTER, release_date) AS quarter&#xA;FROM staging_movies&#xA;WHERE release_date IS NOT NULL;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\176774 Ładowanie dim_language"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{0F83688B-EFC6-4776-A5A4-5519C57360F6}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="176774 Ładowanie dim_language"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{32D0AD9E-EE7A-4170-BBD6-E57AC9F4DA86}"
+          SQLTask:BypassPrepare="False"
+          SQLTask:SqlStatementSource="INSERT INTO dim_language (language_code)&#xA;SELECT DISTINCT&#xA;    LTRIM(RTRIM(original_language)) AS language_code&#xA;FROM staging_movies&#xA;WHERE original_language IS NOT NULL&#xA;  AND LTRIM(RTRIM(original_language)) &lt;&gt; '';" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\176774 Ładowanie dim_movie"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{777F19C2-7295-4C5A-A9A4-25D4CA732B2D}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="176774 Ładowanie dim_movie"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{32D0AD9E-EE7A-4170-BBD6-E57AC9F4DA86}"
+          SQLTask:BypassPrepare="False"
+          SQLTask:SqlStatementSource="WITH movies_unique AS (&#xA;    SELECT&#xA;        id AS source_id,&#xA;        title,&#xA;        original_title,&#xA;        runtime,&#xA;        overview,&#xA;        tagline,&#xA;        ROW_NUMBER() OVER (&#xA;            PARTITION BY id&#xA;            ORDER BY release_date DESC, title&#xA;        ) AS rn&#xA;    FROM staging_movies&#xA;)&#xA;INSERT INTO dim_movie (&#xA;    source_id,&#xA;    title,&#xA;    original_title,&#xA;    runtime,&#xA;    overview,&#xA;    tagline&#xA;)&#xA;SELECT&#xA;    source_id,&#xA;    title,&#xA;    original_title,&#xA;    runtime,&#xA;    overview,&#xA;    tagline&#xA;FROM movies_unique&#xA;WHERE rn = 1;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\176774 Ładowanie dim_status"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{6E47289B-6CED-4822-8F3A-E569DD4BD5C9}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="176774 Ładowanie dim_status"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{32D0AD9E-EE7A-4170-BBD6-E57AC9F4DA86}"
+          SQLTask:BypassPrepare="False"
+          SQLTask:SqlStatementSource="INSERT INTO dim_status (status_name)&#xA;SELECT DISTINCT&#xA;    LTRIM(RTRIM(status)) AS status_name&#xA;FROM staging_movies&#xA;WHERE status IS NOT NULL&#xA;  AND LTRIM(RTRIM(status)) &lt;&gt; '';" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Czyszczenie staging_movies"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{EEA8E35C-8730-4F23-ABA4-D77959E4E71C}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Czyszczenie staging_movies"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{32D0AD9E-EE7A-4170-BBD6-E57AC9F4DA86}"
+          SQLTask:BypassPrepare="False"
+          SQLTask:SqlStatementSource=" TRUNCATE TABLE staging_movies;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{B72B25F0-B1A9-4BF7-8051-14EB43BCF8C8}"
+      DTS:From="Package\Czyszczenie staging_movies"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\176774 Import CSV do Staging" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{9AFEFDA0-E000-44FD-A599-FFD87A21E49E}"
+      DTS:From="Package\176774 Import CSV do Staging"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\176774 Czyszczenie wymiarów podstawowych" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{F8A0F4EE-CB04-4F06-B222-3B2070966F21}"
+      DTS:From="Package\176774 Czyszczenie wymiarów podstawowych"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\176774 Ładowanie dim_date" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
+      DTS:CreationName=""
+      DTS:DTSID="{AD0D8D53-D278-4DF3-89A9-D983E0540931}"
+      DTS:From="Package\176774 Ładowanie dim_date"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 3"
+      DTS:To="Package\176774 Ładowanie dim_language" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 4]"
+      DTS:CreationName=""
+      DTS:DTSID="{36294EE2-78EC-4800-8961-2EAA94C9F78D}"
+      DTS:From="Package\176774 Ładowanie dim_language"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 4"
+      DTS:To="Package\176774 Ładowanie dim_status" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 5]"
+      DTS:CreationName=""
+      DTS:DTSID="{BB8EDE8B-D400-41AF-AF2A-8D3FE272C54D}"
+      DTS:From="Package\176774 Ładowanie dim_status"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 5"
+      DTS:To="Package\176774 Ładowanie dim_movie" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="307,42"
+          Id="Package\176774 Czyszczenie wymiarów podstawowych"
+          TopLeft="75.5555555555555,175.444444444444" />
+        <NodeLayout
+          Size="231,42"
+          Id="Package\176774 Import CSV do Staging"
+          TopLeft="113.555555555556,96.4444444444443" />
+        <NodeLayout
+          Size="220,42"
+          Id="Package\176774 Ładowanie dim_date"
+          TopLeft="126.666666666667,260" />
+        <NodeLayout
+          Size="244,42"
+          Id="Package\176774 Ładowanie dim_language"
+          TopLeft="121.111111111111,338.888888888889" />
+        <NodeLayout
+          Size="228,42"
+          Id="Package\176774 Ładowanie dim_movie"
+          TopLeft="425.555555555556,264.444444444444" />
+        <NodeLayout
+          Size="228,42"
+          Id="Package\176774 Ładowanie dim_status"
+          TopLeft="420,341.111111111111" />
+        <NodeLayout
+          Size="220,42"
+          Id="Package\Czyszczenie staging_movies"
+          TopLeft="115.555555555556,17.4444444444445" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="227.305555555556,59.4444444444444">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,37"
+              Start="0,0"
+              End="0,29.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,29.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="229.055555555556,138.444444444444">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,37"
+              Start="0,0"
+              End="0,29.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,29.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="232.861111111111,217.444444444444">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,42.5555555555557"
+              Start="0,0"
+              End="0,35.0555555555557">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.0555555555557" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 3]"
+          TopLeft="239.888888888889,302">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,36.888888888889"
+              Start="0,0"
+              End="0,29.388888888889">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,29.388888888889" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 4]"
+          TopLeft="365.111111111111,361">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="54.8888888888888,0"
+              Start="0,0"
+              End="47.3888888888888,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="47.3888888888888,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 5]"
+          TopLeft="536.777777777778,341.111111111111">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,-34.6666666666668"
+              Start="0,0"
+              End="0,-27.1666666666668">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-27.1666666666668" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\176774 Import CSV do Staging">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="158,42"
+          Id="Package\176774 Import CSV do Staging\Derived Column"
+          TopLeft="169,116" />
+        <NodeLayout
+          Size="156,42"
+          Id="Package\176774 Import CSV do Staging\Flat File Source"
+          TopLeft="141,10" />
+        <NodeLayout
+          Size="161,42"
+          Id="Package\176774 Import CSV do Staging\Data Conversion"
+          TopLeft="180,195" />
+        <NodeLayout
+          Size="177,42"
+          Id="Package\176774 Import CSV do Staging\OLE DB Destination"
+          TopLeft="167,294" />
+        <EdgeLayout
+          Id="Package\176774 Import CSV do Staging.Paths[Flat File Source Output]"
+          TopLeft="219,52">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="29,64"
+              Start="0,0"
+              End="29,56.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,28"
+                    Point2="0,32"
+                    Point3="4,32" />
+                  <mssgle:LineSegment
+                    End="25,32" />
+                  <mssgle:CubicBezierSegment
+                    Point1="25,32"
+                    Point2="29,32"
+                    Point3="29,36" />
+                  <mssgle:LineSegment
+                    End="29,56.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\176774 Import CSV do Staging.Paths[Derived Column Output]"
+          TopLeft="248,158">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="12.5,37"
+              Start="0,0"
+              End="12.5,29.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,14.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,14.5"
+                    Point2="0,18.5"
+                    Point3="4,18.5" />
+                  <mssgle:LineSegment
+                    End="8.5,18.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="8.5,18.5"
+                    Point2="12.5,18.5"
+                    Point3="12.5,22.5" />
+                  <mssgle:LineSegment
+                    End="12.5,29.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\176774 Import CSV do Staging.Paths[Data Conversion Output]"
+          TopLeft="258,237">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,57"
+              Start="0,0"
+              End="0,49.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,49.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\176774 Import CSV do Staging\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

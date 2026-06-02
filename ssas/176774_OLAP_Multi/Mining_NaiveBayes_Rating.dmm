@@ -1,0 +1,260 @@
+﻿<MiningStructure xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="fd6b0709-ae1c-40d8-9143-764c20bb85f2" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Mining_NaiveBayes_Rating</ID>
+  <Name>Mining_NaiveBayes_Rating</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:CaseTableName</Name>
+      <Value>dbo_v_mining_movies_rating_bayes</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="9c2fd2d4-532d-4fd4-87fb-621de6b72ac7">
+    <DataSourceViewID>Imdb</DataSourceViewID>
+  </Source>
+  <Columns>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="c1b817f8-4586-4703-af8f-ccafa4be79f3">
+      <ID>Budget</ID>
+      <Name>Budget</Name>
+      <Type>Long</Type>
+      <Content>Discretized</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="337bcf3b-92ff-4445-9dc4-610a4118691d">
+          <DataType>BigInt</DataType>
+          <DataSize>-1</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="8ea11278-be2f-4ab7-9cab-00bd0311177d">
+            <TableID>dbo_v_mining_movies_rating_bayes</TableID>
+            <ColumnID>budget</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="1fef7ee4-9ff7-42f0-be87-ab06f2c57105">
+      <ID>Fact Id</ID>
+      <Name>Fact Id</Name>
+      <IsKey>true</IsKey>
+      <Type>Long</Type>
+      <Content>Key</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="37a6b8a8-50fc-436f-98ac-55212601dff6">
+          <DataType>Integer</DataType>
+          <DataSize>-1</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="1cb0d969-fd6c-4e56-af4c-3e0bbffe876f">
+            <TableID>dbo_v_mining_movies_rating_bayes</TableID>
+            <ColumnID>fact_id</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="a8237333-ce12-4ddb-9bb9-c7ff562190d1">
+      <ID>Language Code</ID>
+      <Name>Language Code</Name>
+      <Type>Text</Type>
+      <Content>Discrete</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="f54ec626-f568-4a77-92f2-ea40939e9726">
+          <DataType>WChar</DataType>
+          <DataSize>20</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="cfe8cc84-13f4-47a1-9b85-60eedef336d2">
+            <TableID>dbo_v_mining_movies_rating_bayes</TableID>
+            <ColumnID>language_code</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="f8580c1e-a5c2-4f6e-afba-9bc1c5774ebf">
+      <ID>Popularity</ID>
+      <Name>Popularity</Name>
+      <Type>Double</Type>
+      <Content>Discretized</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="e4dfa710-df2f-4c5f-b881-3c38cd02e315">
+          <DataType>Double</DataType>
+          <DataSize>-1</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="671f8703-c5e1-4c43-af03-2af33d5ab7f3">
+            <TableID>dbo_v_mining_movies_rating_bayes</TableID>
+            <ColumnID>popularity</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="9ff189b9-cf52-4217-a893-9e0a1dfc78ea">
+      <ID>Profit</ID>
+      <Name>Profit</Name>
+      <Type>Long</Type>
+      <Content>Discretized</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="fe4184b0-4c0c-4719-88d6-f226effd10ea">
+          <DataType>BigInt</DataType>
+          <DataSize>-1</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="11e75b2e-d36c-4dbe-a45d-26707a8f3e42">
+            <TableID>dbo_v_mining_movies_rating_bayes</TableID>
+            <ColumnID>profit</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="e9a8cfd9-e28b-4ba9-b7a8-2077a8f04305">
+      <ID>Rating Category</ID>
+      <Name>Rating Category</Name>
+      <Type>Text</Type>
+      <Content>Discrete</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="2b5bf553-7a7b-4ecb-9380-c81ab344496c">
+          <DataType>WChar</DataType>
+          <DataSize>7</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="75fd0f16-153e-4e9d-a257-7839688288f2">
+            <TableID>dbo_v_mining_movies_rating_bayes</TableID>
+            <ColumnID>rating_category</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="69b2f68b-bd9c-46c4-9ea4-5db364035354">
+      <ID>Revenue</ID>
+      <Name>Revenue</Name>
+      <Type>Long</Type>
+      <Content>Discretized</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="eb73ae43-2969-4a73-a9ef-1293bf3cb9e0">
+          <DataType>BigInt</DataType>
+          <DataSize>-1</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="9f7b4173-bda3-44a4-bc83-793b0977075e">
+            <TableID>dbo_v_mining_movies_rating_bayes</TableID>
+            <ColumnID>revenue</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="138f57fd-497f-45c1-ad85-c7331cd4c98b">
+      <ID>Vote Count</ID>
+      <Name>Vote Count</Name>
+      <Type>Long</Type>
+      <Content>Discretized</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="05578130-bdc9-41b8-8d7e-022f1804b837">
+          <DataType>Integer</DataType>
+          <DataSize>-1</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="e4402699-6707-47f9-8b9c-17e7ba48c1f6">
+            <TableID>dbo_v_mining_movies_rating_bayes</TableID>
+            <ColumnID>vote_count</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="d58dc3d5-f52f-45db-b8fd-13f8f20ad810">
+      <ID>Year</ID>
+      <Name>Year</Name>
+      <Type>Long</Type>
+      <Content>Discretized</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="2c2d7990-691c-41e9-801a-0fa0722b10aa">
+          <DataType>Integer</DataType>
+          <DataSize>-1</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="a8d29875-92ab-4760-a56b-f19b28054ba1">
+            <TableID>dbo_v_mining_movies_rating_bayes</TableID>
+            <ColumnID>year</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+  </Columns>
+  <MiningModels>
+    <MiningModel dwd:design-time-name="150889a0-00a5-4c7c-8c63-afe67c6d0ee8">
+      <ID>Model_NaiveBayes_Rating</ID>
+      <Name>Model_NaiveBayes_Rating</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Algorithm>Microsoft_Naive_Bayes</Algorithm>
+      <Columns>
+        <Column dwd:design-time-name="92065b6e-03ee-4bf0-ae29-cf6844b1a7df">
+          <ID>Budget</ID>
+          <Name>Budget</Name>
+          <SourceColumnID>Budget</SourceColumnID>
+        </Column>
+        <Column dwd:design-time-name="db8f33d9-9187-4943-af70-3c743aa04804">
+          <ID>Fact Id</ID>
+          <Name>Fact Id</Name>
+          <SourceColumnID>Fact Id</SourceColumnID>
+          <Usage>Key</Usage>
+        </Column>
+        <Column dwd:design-time-name="c55314e0-b98c-414c-ae21-0e13bda7609b">
+          <ID>Language Code</ID>
+          <Name>Language Code</Name>
+          <SourceColumnID>Language Code</SourceColumnID>
+        </Column>
+        <Column dwd:design-time-name="46c7b5f1-5eab-4e20-a5ea-9e3ec79fba44">
+          <ID>Popularity</ID>
+          <Name>Popularity</Name>
+          <SourceColumnID>Popularity</SourceColumnID>
+        </Column>
+        <Column dwd:design-time-name="fc18dcb0-b1b3-49ad-9d36-a489e3f8088c">
+          <ID>Profit</ID>
+          <Name>Profit</Name>
+          <SourceColumnID>Profit</SourceColumnID>
+        </Column>
+        <Column dwd:design-time-name="043fd0d8-f990-4115-aeee-b90fd0de9c2a">
+          <ID>Rating Category</ID>
+          <Name>Rating Category</Name>
+          <SourceColumnID>Rating Category</SourceColumnID>
+          <Usage>PredictOnly</Usage>
+        </Column>
+        <Column dwd:design-time-name="516ba8cf-8222-4bbf-93f4-449b43c2587d">
+          <ID>Revenue</ID>
+          <Name>Revenue</Name>
+          <SourceColumnID>Revenue</SourceColumnID>
+        </Column>
+        <Column dwd:design-time-name="6d810f23-b3d1-42a6-a6f3-24e070518358">
+          <ID>Vote Count</ID>
+          <Name>Vote Count</Name>
+          <SourceColumnID>Vote Count</SourceColumnID>
+        </Column>
+        <Column dwd:design-time-name="2a44a718-3976-45bf-a272-baf224ea257d">
+          <ID>Year</ID>
+          <Name>Year</Name>
+          <SourceColumnID>Year</SourceColumnID>
+        </Column>
+      </Columns>
+    </MiningModel>
+  </MiningModels>
+  <ddl100_100:HoldoutMaxPercent>30</ddl100_100:HoldoutMaxPercent>
+</MiningStructure>

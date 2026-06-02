@@ -1,0 +1,1668 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="5/18/2026 6:47:30 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-IFD8LT5"
+  DTS:CreatorName="DESKTOP-IFD8LT5\Student"
+  DTS:DTSID="{F38D810E-50EF-485C-9BDF-8BD8DDE1CFCC}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.170"
+  DTS:LocaleID="1045"
+  DTS:ObjectName="Package4_Countries_Fuzzy"
+  DTS:PackageType="5"
+  DTS:VersionBuild="5"
+  DTS:VersionGUID="{2C1C030E-DA90-4BF4-A0D8-184558B5457A}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-IFD8LT5\WAD.imdb]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{CB19429E-7349-4AEE-9D36-651F3065F5DE}"
+      DTS:ObjectName="DESKTOP-IFD8LT5\WAD.imdb">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-IFD8LT5\WAD;Initial Catalog=imdb;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\176774 Lookup i Fuzzy Lookup krajów"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{EA2E5CBD-8D37-4834-9B99-B56655EC0F2B}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="176774 Lookup i Fuzzy Lookup krajów"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\176774 Lookup i Fuzzy Lookup krajów\Fuzzy kraje"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Fuzzy kraje"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[country_fuzzy_matches]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1250</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\176774 Lookup i Fuzzy Lookup krajów\Fuzzy kraje.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-IFD8LT5\WAD.imdb]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-IFD8LT5\WAD.imdb]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\176774 Lookup i Fuzzy Lookup krajów\Fuzzy kraje.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\176774 Lookup i Fuzzy Lookup krajów\Fuzzy kraje.Inputs[OLE DB Destination Input].Columns[movie_id]"
+                      cachedDataType="i4"
+                      cachedName="movie_id"
+                      externalMetadataColumnId="Package\176774 Lookup i Fuzzy Lookup krajów\Fuzzy kraje.Inputs[OLE DB Destination Input].ExternalColumns[movie_id]"
+                      lineageId="Package\176774 Lookup i Fuzzy Lookup krajów\Fuzzy Lookup kraje.Outputs[Fuzzy Lookup Output].Columns[movie_id]" />
+                    <inputColumn
+                      refId="Package\176774 Lookup i Fuzzy Lookup krajów\Fuzzy kraje.Inputs[OLE DB Destination Input].Columns[matched_country_name]"
+                      cachedDataType="wstr"
+                      cachedLength="200"
+                      cachedName="matched_country_name"
+                      externalMetadataColumnId="Package\176774 Lookup i Fuzzy Lookup krajów\Fuzzy kraje.Inputs[OLE DB Destination Input].ExternalColumns[matched_country_name]"
+                      lineageId="Package\176774 Lookup i Fuzzy Lookup krajów\Fuzzy Lookup kraje.Outputs[Fuzzy Lookup Output].Columns[matched_country_name]" />
+                    <inputColumn
+                      refId="Package\176774 Lookup i Fuzzy Lookup krajów\Fuzzy kraje.Inputs[OLE DB Destination Input].Columns[matched_country_id]"
+                      cachedDataType="i4"
+                      cachedName="matched_country_id"
+                      externalMetadataColumnId="Package\176774 Lookup i Fuzzy Lookup krajów\Fuzzy kraje.Inputs[OLE DB Destination Input].ExternalColumns[matched_country_id]"
+                      lineageId="Package\176774 Lookup i Fuzzy Lookup krajów\Fuzzy Lookup kraje.Outputs[Fuzzy Lookup Output].Columns[matched_country_id]" />
+                    <inputColumn
+                      refId="Package\176774 Lookup i Fuzzy Lookup krajów\Fuzzy kraje.Inputs[OLE DB Destination Input].Columns[_Similarity]"
+                      cachedDataType="r4"
+                      cachedName="_Similarity"
+                      externalMetadataColumnId="Package\176774 Lookup i Fuzzy Lookup krajów\Fuzzy kraje.Inputs[OLE DB Destination Input].ExternalColumns[similarity]"
+                      lineageId="Package\176774 Lookup i Fuzzy Lookup krajów\Fuzzy Lookup kraje.Outputs[Fuzzy Lookup Output].Columns[_Similarity]" />
+                    <inputColumn
+                      refId="Package\176774 Lookup i Fuzzy Lookup krajów\Fuzzy kraje.Inputs[OLE DB Destination Input].Columns[_Confidence]"
+                      cachedDataType="r4"
+                      cachedName="_Confidence"
+                      externalMetadataColumnId="Package\176774 Lookup i Fuzzy Lookup krajów\Fuzzy kraje.Inputs[OLE DB Destination Input].ExternalColumns[confidence]"
+                      lineageId="Package\176774 Lookup i Fuzzy Lookup krajów\Fuzzy Lookup kraje.Outputs[Fuzzy Lookup Output].Columns[_Confidence]" />
+                    <inputColumn
+                      refId="Package\176774 Lookup i Fuzzy Lookup krajów\Fuzzy kraje.Inputs[OLE DB Destination Input].Columns[country_name]"
+                      cachedDataType="wstr"
+                      cachedLength="200"
+                      cachedName="country_name"
+                      externalMetadataColumnId="Package\176774 Lookup i Fuzzy Lookup krajów\Fuzzy kraje.Inputs[OLE DB Destination Input].ExternalColumns[dirty_country_name]"
+                      lineageId="Package\176774 Lookup i Fuzzy Lookup krajów\Fuzzy Lookup kraje.Outputs[Fuzzy Lookup Output].Columns[country_name]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\176774 Lookup i Fuzzy Lookup krajów\Fuzzy kraje.Inputs[OLE DB Destination Input].ExternalColumns[movie_id]"
+                      dataType="i4"
+                      name="movie_id" />
+                    <externalMetadataColumn
+                      refId="Package\176774 Lookup i Fuzzy Lookup krajów\Fuzzy kraje.Inputs[OLE DB Destination Input].ExternalColumns[dirty_country_name]"
+                      dataType="wstr"
+                      length="200"
+                      name="dirty_country_name" />
+                    <externalMetadataColumn
+                      refId="Package\176774 Lookup i Fuzzy Lookup krajów\Fuzzy kraje.Inputs[OLE DB Destination Input].ExternalColumns[matched_country_id]"
+                      dataType="i4"
+                      name="matched_country_id" />
+                    <externalMetadataColumn
+                      refId="Package\176774 Lookup i Fuzzy Lookup krajów\Fuzzy kraje.Inputs[OLE DB Destination Input].ExternalColumns[matched_country_name]"
+                      dataType="wstr"
+                      length="200"
+                      name="matched_country_name" />
+                    <externalMetadataColumn
+                      refId="Package\176774 Lookup i Fuzzy Lookup krajów\Fuzzy kraje.Inputs[OLE DB Destination Input].ExternalColumns[similarity]"
+                      dataType="r8"
+                      name="similarity" />
+                    <externalMetadataColumn
+                      refId="Package\176774 Lookup i Fuzzy Lookup krajów\Fuzzy kraje.Inputs[OLE DB Destination Input].ExternalColumns[confidence]"
+                      dataType="r8"
+                      name="confidence" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\176774 Lookup i Fuzzy Lookup krajów\Fuzzy kraje.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\176774 Lookup i Fuzzy Lookup krajów\Fuzzy kraje.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\176774 Lookup i Fuzzy Lookup krajów\Fuzzy kraje.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\176774 Lookup i Fuzzy Lookup krajów\Fuzzy kraje.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\176774 Lookup i Fuzzy Lookup krajów\Fuzzy kraje.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\176774 Lookup i Fuzzy Lookup krajów\Fuzzy kraje.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\176774 Lookup i Fuzzy Lookup krajów\Fuzzy Lookup kraje"
+              componentClassID="Microsoft.FuzzyLookup"
+              contactInfo="Fuzzy Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;5"
+              description="Performs data cleaning tasks such as standardizing data, correcting data, and providing missing values.  Uses fuzzy matching to return one or more close matches from a reference table. For example, lookup customer data by address, even if your input address data does not exactly match your reference address data."
+              name="Fuzzy Lookup kraje"
+              version="5">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Indicates whether to reuse an existing fuzzy-match index table or build a new one. The new index table can be temporary, persisted, or persisted and maintained."
+                  name="MatchIndexOptions"
+                  typeConverter="tcMatchIndexOptions">1</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the maximum amount of memory (MB) that this instance of the Fuzzy Lookup transformation can use.  If 0 is given, then the transform will dynamically adjust it's memory usage based upon it's requirements and available system memory."
+                  expressionType="Notify"
+                  name="MaxMemoryUsage" />
+                <property
+                  dataType="System.Null"
+                  description="Specifies the name of the fuzzy-match index table to be reused or the table name in which a newly generated fuzzy-match index table will be written."
+                  name="MatchIndexName"
+                  state="escaped" />
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the reference table or view against which to match incoming records."
+                  name="ReferenceTableName"
+                  state="escaped">_x005B_dbo_x005D_._x005B_dim_country_x005D_</property>
+                <property
+                  dataType="System.Int32"
+                  description="Indicates whether to drop an existing fuzzy-match index table if transformation is configured to generate a new table and a table with the same name already exists."
+                  name="DropExistingMatchIndex">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Whether a copy of the reference table should be made for fuzzy match index construction and subsequent matching.  It is strongly recommended that a copy always be made, otherwise unpredictable output may result if the contents of the reference table change during package execution (or between executions if reusing a fuzzy match index).  If this property is set to false, the reference table must additionally have a clustered index built upon an integer identity column."
+                  name="CopyReferenceTable">1</property>
+                <property
+                  dataType="System.UInt32"
+                  description="Specifies the maximum number of fuzzy matches to return for an input record."
+                  name="MaxOutputMatchesPerInput">1</property>
+                <property
+                  dataType="System.Single"
+                  description="Specifies the minimum similarity score required for the match results that the transformation returns."
+                  name="MinSimilarity">0.2</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the set of white-space and punctuation characters used to separate fuzzy match fields into the words used for matching and scoring a fuzzy lookup."
+                  name="Delimiters"
+                  state="escaped">_x0020__x0009__x000D__x000A__x002C_._x003B_:-_x0022__x0027__x0026__x002F__x005C__x0040__x0021__x003F__x0028__x0029__x003C__x003E__x005B__x005D__x007B__x007D__x007C__x0023__x002A__x005E__x0025_</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the metadata of the reference table in XML format."
+                  name="ReferenceMetadataXml"
+                  state="escaped">_x003C_referenceMetadata_x003E__x003C_referenceColumns_x003E__x003C_referenceColumn_x0020_name_x003D__x0022_country_id_x0022__x0020_dataType_x003D__x0022_DT_I4_x0022__x0020_length_x003D__x0022_0_x0022__x0020_precision_x003D__x0022_0_x0022__x0020_scale_x003D__x0022_0_x0022__x0020_codePage_x003D__x0022_0_x0022__x002F__x003E__x003C_referenceColumn_x0020_name_x003D__x0022_country_name_x0022__x0020_dataType_x003D__x0022_DT_WSTR_x0022__x0020_length_x003D__x0022_200_x0022__x0020_precision_x003D__x0022_0_x0022__x0020_scale_x003D__x0022_0_x0022__x0020_codePage_x003D__x0022_0_x0022__x002F__x003E__x003C__x002F_referenceColumns_x003E__x003C__x002F_referenceMetadata_x003E__x000D__x000A_</property>
+                <property
+                  dataType="System.Boolean"
+                  description="If true, each input record will be directly compared against EVERY record in the reference table.  This may produce slightly better results, but will be extremely slow unless the number of records in the reference table is very small.  Note that the entire reference table will be loaded into main memory if this option is enabled.  This option is primarily intended for debugging purposes and should be used with care."
+                  name="Exhaustive">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="If true, Fuzzy Lookup will partially load the error-tolerant index and the reference table into main memory before execution begins.  This can greatly enhance performance if many input rows are to be processed."
+                  name="WarmCaches">true</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\176774 Lookup i Fuzzy Lookup krajów\Fuzzy Lookup kraje.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-IFD8LT5\WAD.imdb]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-IFD8LT5\WAD.imdb]"
+                  description="Microsoft SQL Server connection and database in which the fuzzy lookup reference table is located and where the fuzzy match index table will be stored and accessed."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\176774 Lookup i Fuzzy Lookup krajów\Fuzzy Lookup kraje.Inputs[Fuzzy Lookup Input]"
+                  name="Fuzzy Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\176774 Lookup i Fuzzy Lookup krajów\Fuzzy Lookup kraje.Inputs[Fuzzy Lookup Input].Columns[movie_id]"
+                      cachedDataType="i4"
+                      cachedName="movie_id"
+                      lineageId="Package\176774 Lookup i Fuzzy Lookup krajów\Źródło country_dirty_test.Outputs[OLE DB Source Output].Columns[movie_id]">
+                      <properties>
+                        <property
+                          dataType="System.Null"
+                          description="Name of the reference table column with which the input column should be matched."
+                          name="JoinToReferenceColumn"
+                          state="escaped" />
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies whether the match is a fuzzy or an exact match."
+                          name="JoinType"
+                          typeConverter="tcJoinType">2</property>
+                        <property
+                          dataType="System.Single"
+                          description="Specifies the minimum textual similarity required between input and fuzzy matched records on values in this particular join column.  Must be a floating point value between 0.0 and 1.0."
+                          name="MinSimilarity">0</property>
+                        <property
+                          dataType="System.UInt32"
+                          description="Specifies the comparison options for character data. The options are those supported by the FoldString function."
+                          name="FuzzyComparisonFlags"
+                          typeConverter="tcComparisonFlags">1</property>
+                        <property
+                          dataType="System.UInt32"
+                          description="Flags to FoldString that should be used when comparing whether two strings are equivalent."
+                          name="FuzzyComparisonFlagsEx"
+                          typeConverter="tcComparisonFlagsEx">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\176774 Lookup i Fuzzy Lookup krajów\Fuzzy Lookup kraje.Inputs[Fuzzy Lookup Input].Columns[source_id]"
+                      cachedDataType="i4"
+                      cachedName="source_id"
+                      lineageId="Package\176774 Lookup i Fuzzy Lookup krajów\Źródło country_dirty_test.Outputs[OLE DB Source Output].Columns[source_id]">
+                      <properties>
+                        <property
+                          dataType="System.Null"
+                          description="Name of the reference table column with which the input column should be matched."
+                          name="JoinToReferenceColumn"
+                          state="escaped" />
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies whether the match is a fuzzy or an exact match."
+                          name="JoinType"
+                          typeConverter="tcJoinType">2</property>
+                        <property
+                          dataType="System.Single"
+                          description="Specifies the minimum textual similarity required between input and fuzzy matched records on values in this particular join column.  Must be a floating point value between 0.0 and 1.0."
+                          name="MinSimilarity">0</property>
+                        <property
+                          dataType="System.UInt32"
+                          description="Specifies the comparison options for character data. The options are those supported by the FoldString function."
+                          name="FuzzyComparisonFlags"
+                          typeConverter="tcComparisonFlags">1</property>
+                        <property
+                          dataType="System.UInt32"
+                          description="Flags to FoldString that should be used when comparing whether two strings are equivalent."
+                          name="FuzzyComparisonFlagsEx"
+                          typeConverter="tcComparisonFlagsEx">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\176774 Lookup i Fuzzy Lookup krajów\Fuzzy Lookup kraje.Inputs[Fuzzy Lookup Input].Columns[country_name]"
+                      cachedDataType="wstr"
+                      cachedLength="200"
+                      cachedName="country_name"
+                      lineageId="Package\176774 Lookup i Fuzzy Lookup krajów\Źródło country_dirty_test.Outputs[OLE DB Source Output].Columns[country_name]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Name of the reference table column with which the input column should be matched."
+                          name="JoinToReferenceColumn"
+                          state="escaped">country_name</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies whether the match is a fuzzy or an exact match."
+                          name="JoinType"
+                          typeConverter="tcJoinType">2</property>
+                        <property
+                          dataType="System.Single"
+                          description="Specifies the minimum textual similarity required between input and fuzzy matched records on values in this particular join column.  Must be a floating point value between 0.0 and 1.0."
+                          name="MinSimilarity">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data. The options are those supported by the FoldString function."
+                          name="FuzzyComparisonFlags"
+                          typeConverter="tcComparisonFlags">1</property>
+                        <property
+                          dataType="System.UInt32"
+                          description="Flags to FoldString that should be used when comparing whether two strings are equivalent."
+                          name="FuzzyComparisonFlagsEx"
+                          typeConverter="tcComparisonFlagsEx">0</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\176774 Lookup i Fuzzy Lookup krajów\Fuzzy Lookup kraje.Outputs[Fuzzy Lookup Output]"
+                  name="Fuzzy Lookup Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\176774 Lookup i Fuzzy Lookup krajów\Fuzzy Lookup kraje.Outputs[Fuzzy Lookup Output].Columns[movie_id]"
+                      dataType="i4"
+                      lineageId="Package\176774 Lookup i Fuzzy Lookup krajów\Fuzzy Lookup kraje.Outputs[Fuzzy Lookup Output].Columns[movie_id]"
+                      name="movie_id">
+                      <properties>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the reference table column that is copied to the output for each match result."
+                          name="CopyFromReferenceColumn"
+                          state="escaped" />
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column from which to copy to this output column for each match."
+                          name="SourceInputColumnLineageID">#{Package\176774 Lookup i Fuzzy Lookup krajów\Źródło country_dirty_test.Outputs[OLE DB Source Output].Columns[movie_id]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies whether the column is used to indicate confidence or similarity."
+                          name="ColumnType"
+                          typeConverter="tcColumnType">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\176774 Lookup i Fuzzy Lookup krajów\Fuzzy Lookup kraje.Outputs[Fuzzy Lookup Output].Columns[source_id]"
+                      dataType="i4"
+                      lineageId="Package\176774 Lookup i Fuzzy Lookup krajów\Fuzzy Lookup kraje.Outputs[Fuzzy Lookup Output].Columns[source_id]"
+                      name="source_id">
+                      <properties>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the reference table column that is copied to the output for each match result."
+                          name="CopyFromReferenceColumn"
+                          state="escaped" />
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column from which to copy to this output column for each match."
+                          name="SourceInputColumnLineageID">#{Package\176774 Lookup i Fuzzy Lookup krajów\Źródło country_dirty_test.Outputs[OLE DB Source Output].Columns[source_id]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies whether the column is used to indicate confidence or similarity."
+                          name="ColumnType"
+                          typeConverter="tcColumnType">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\176774 Lookup i Fuzzy Lookup krajów\Fuzzy Lookup kraje.Outputs[Fuzzy Lookup Output].Columns[country_name]"
+                      dataType="wstr"
+                      length="200"
+                      lineageId="Package\176774 Lookup i Fuzzy Lookup krajów\Fuzzy Lookup kraje.Outputs[Fuzzy Lookup Output].Columns[country_name]"
+                      name="country_name">
+                      <properties>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the reference table column that is copied to the output for each match result."
+                          name="CopyFromReferenceColumn"
+                          state="escaped" />
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column from which to copy to this output column for each match."
+                          name="SourceInputColumnLineageID">#{Package\176774 Lookup i Fuzzy Lookup krajów\Źródło country_dirty_test.Outputs[OLE DB Source Output].Columns[country_name]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies whether the column is used to indicate confidence or similarity."
+                          name="ColumnType"
+                          typeConverter="tcColumnType">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\176774 Lookup i Fuzzy Lookup krajów\Fuzzy Lookup kraje.Outputs[Fuzzy Lookup Output].Columns[matched_country_name]"
+                      dataType="wstr"
+                      length="200"
+                      lineageId="Package\176774 Lookup i Fuzzy Lookup krajów\Fuzzy Lookup kraje.Outputs[Fuzzy Lookup Output].Columns[matched_country_name]"
+                      name="matched_country_name">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the reference table column that is copied to the output for each match result."
+                          name="CopyFromReferenceColumn"
+                          state="escaped">country_name</property>
+                        <property
+                          containsID="true"
+                          dataType="System.Null"
+                          description="Specifies the lineage identifier of the input column from which to copy to this output column for each match."
+                          name="SourceInputColumnLineageID" />
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies whether the column is used to indicate confidence or similarity."
+                          name="ColumnType"
+                          typeConverter="tcColumnType">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\176774 Lookup i Fuzzy Lookup krajów\Fuzzy Lookup kraje.Outputs[Fuzzy Lookup Output].Columns[matched_country_id]"
+                      dataType="i4"
+                      lineageId="Package\176774 Lookup i Fuzzy Lookup krajów\Fuzzy Lookup kraje.Outputs[Fuzzy Lookup Output].Columns[matched_country_id]"
+                      name="matched_country_id">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the reference table column that is copied to the output for each match result."
+                          name="CopyFromReferenceColumn"
+                          state="escaped">country_id</property>
+                        <property
+                          containsID="true"
+                          dataType="System.Null"
+                          description="Specifies the lineage identifier of the input column from which to copy to this output column for each match."
+                          name="SourceInputColumnLineageID" />
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies whether the column is used to indicate confidence or similarity."
+                          name="ColumnType"
+                          typeConverter="tcColumnType">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\176774 Lookup i Fuzzy Lookup krajów\Fuzzy Lookup kraje.Outputs[Fuzzy Lookup Output].Columns[_Similarity]"
+                      dataType="r4"
+                      lineageId="Package\176774 Lookup i Fuzzy Lookup krajów\Fuzzy Lookup kraje.Outputs[Fuzzy Lookup Output].Columns[_Similarity]"
+                      name="_Similarity">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies whether the column is used to indicate confidence or similarity."
+                          name="ColumnType"
+                          typeConverter="tcColumnType">1</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\176774 Lookup i Fuzzy Lookup krajów\Fuzzy Lookup kraje.Outputs[Fuzzy Lookup Output].Columns[_Confidence]"
+                      dataType="r4"
+                      lineageId="Package\176774 Lookup i Fuzzy Lookup krajów\Fuzzy Lookup kraje.Outputs[Fuzzy Lookup Output].Columns[_Confidence]"
+                      name="_Confidence">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies whether the column is used to indicate confidence or similarity."
+                          name="ColumnType"
+                          typeConverter="tcColumnType">2</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\176774 Lookup i Fuzzy Lookup krajów\Fuzzy Lookup kraje.Outputs[Fuzzy Lookup Output].Columns[_Similarity_country_name]"
+                      dataType="r4"
+                      description="Column-level similarity score for fuzzy join on column &quot;country_name&quot;."
+                      lineageId="Package\176774 Lookup i Fuzzy Lookup krajów\Fuzzy Lookup kraje.Outputs[Fuzzy Lookup Output].Columns[_Similarity_country_name]"
+                      name="_Similarity_country_name">
+                      <properties>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the reference table column that is copied to the output for each match result."
+                          name="CopyFromReferenceColumn"
+                          state="escaped" />
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column from which to copy to this output column for each match."
+                          name="SourceInputColumnLineageID">#{Package\176774 Lookup i Fuzzy Lookup krajów\Źródło country_dirty_test.Outputs[OLE DB Source Output].Columns[country_name]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies whether the column is used to indicate confidence or similarity."
+                          name="ColumnType"
+                          typeConverter="tcColumnType">3</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\176774 Lookup i Fuzzy Lookup krajów\Lookup dim_country"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Lookup dim_country"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT
+    country_id,
+    country_name
+FROM dim_country;</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (SELECT
+    country_id,
+    country_name
+FROM dim_country;) [refTable]
+where [refTable].[country_name] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="country_id" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="country_name" dataType="DT_WSTR" length="200" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\176774 Lookup i Fuzzy Lookup krajów\Źródło country_dirty_test.Outputs[OLE DB Source Output].Columns[country_name]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1250</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\176774 Lookup i Fuzzy Lookup krajów\Lookup dim_country.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-IFD8LT5\WAD.imdb]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-IFD8LT5\WAD.imdb]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\176774 Lookup i Fuzzy Lookup krajów\Lookup dim_country.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\176774 Lookup i Fuzzy Lookup krajów\Lookup dim_country.Inputs[Lookup Input].Columns[country_name]"
+                      cachedDataType="wstr"
+                      cachedLength="200"
+                      cachedName="country_name"
+                      lineageId="Package\176774 Lookup i Fuzzy Lookup krajów\Źródło country_dirty_test.Outputs[OLE DB Source Output].Columns[country_name]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">country_name</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\176774 Lookup i Fuzzy Lookup krajów\Lookup dim_country.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\176774 Lookup i Fuzzy Lookup krajów\Lookup dim_country.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\176774 Lookup i Fuzzy Lookup krajów\Lookup dim_country.Outputs[Lookup Match Output].Columns[country_id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\176774 Lookup i Fuzzy Lookup krajów\Lookup dim_country.Outputs[Lookup Match Output].Columns[country_id]"
+                      name="country_id"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">country_id</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\176774 Lookup i Fuzzy Lookup krajów\Lookup dim_country.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\176774 Lookup i Fuzzy Lookup krajów\Lookup dim_country.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\176774 Lookup i Fuzzy Lookup krajów\Lookup dim_country.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\176774 Lookup i Fuzzy Lookup krajów\Lookup dim_country.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\176774 Lookup i Fuzzy Lookup krajów\Lookup dim_country.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\176774 Lookup i Fuzzy Lookup krajów\Lookup dim_country.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\176774 Lookup i Fuzzy Lookup krajów\Lookup dim_country.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\176774 Lookup i Fuzzy Lookup krajów\Lookup dim_country.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\176774 Lookup i Fuzzy Lookup krajów\Lookup Match kraje"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Lookup Match kraje"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[country_lookup_match]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1250</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\176774 Lookup i Fuzzy Lookup krajów\Lookup Match kraje.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-IFD8LT5\WAD.imdb]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-IFD8LT5\WAD.imdb]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\176774 Lookup i Fuzzy Lookup krajów\Lookup Match kraje.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\176774 Lookup i Fuzzy Lookup krajów\Lookup Match kraje.Inputs[OLE DB Destination Input].Columns[movie_id]"
+                      cachedDataType="i4"
+                      cachedName="movie_id"
+                      externalMetadataColumnId="Package\176774 Lookup i Fuzzy Lookup krajów\Lookup Match kraje.Inputs[OLE DB Destination Input].ExternalColumns[movie_id]"
+                      lineageId="Package\176774 Lookup i Fuzzy Lookup krajów\Źródło country_dirty_test.Outputs[OLE DB Source Output].Columns[movie_id]" />
+                    <inputColumn
+                      refId="Package\176774 Lookup i Fuzzy Lookup krajów\Lookup Match kraje.Inputs[OLE DB Destination Input].Columns[country_name]"
+                      cachedDataType="wstr"
+                      cachedLength="200"
+                      cachedName="country_name"
+                      externalMetadataColumnId="Package\176774 Lookup i Fuzzy Lookup krajów\Lookup Match kraje.Inputs[OLE DB Destination Input].ExternalColumns[country_name]"
+                      lineageId="Package\176774 Lookup i Fuzzy Lookup krajów\Źródło country_dirty_test.Outputs[OLE DB Source Output].Columns[country_name]" />
+                    <inputColumn
+                      refId="Package\176774 Lookup i Fuzzy Lookup krajów\Lookup Match kraje.Inputs[OLE DB Destination Input].Columns[country_id]"
+                      cachedDataType="i4"
+                      cachedName="country_id"
+                      externalMetadataColumnId="Package\176774 Lookup i Fuzzy Lookup krajów\Lookup Match kraje.Inputs[OLE DB Destination Input].ExternalColumns[country_id]"
+                      lineageId="Package\176774 Lookup i Fuzzy Lookup krajów\Lookup dim_country.Outputs[Lookup Match Output].Columns[country_id]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\176774 Lookup i Fuzzy Lookup krajów\Lookup Match kraje.Inputs[OLE DB Destination Input].ExternalColumns[movie_id]"
+                      dataType="i4"
+                      name="movie_id" />
+                    <externalMetadataColumn
+                      refId="Package\176774 Lookup i Fuzzy Lookup krajów\Lookup Match kraje.Inputs[OLE DB Destination Input].ExternalColumns[country_id]"
+                      dataType="i4"
+                      name="country_id" />
+                    <externalMetadataColumn
+                      refId="Package\176774 Lookup i Fuzzy Lookup krajów\Lookup Match kraje.Inputs[OLE DB Destination Input].ExternalColumns[country_name]"
+                      dataType="wstr"
+                      length="200"
+                      name="country_name" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\176774 Lookup i Fuzzy Lookup krajów\Lookup Match kraje.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\176774 Lookup i Fuzzy Lookup krajów\Lookup Match kraje.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\176774 Lookup i Fuzzy Lookup krajów\Lookup Match kraje.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\176774 Lookup i Fuzzy Lookup krajów\Lookup Match kraje.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\176774 Lookup i Fuzzy Lookup krajów\Lookup Match kraje.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\176774 Lookup i Fuzzy Lookup krajów\Lookup Match kraje.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\176774 Lookup i Fuzzy Lookup krajów\Lookup No Match kraje"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Lookup No Match kraje"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[country_lookup_no_match]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1250</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\176774 Lookup i Fuzzy Lookup krajów\Lookup No Match kraje.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-IFD8LT5\WAD.imdb]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-IFD8LT5\WAD.imdb]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\176774 Lookup i Fuzzy Lookup krajów\Lookup No Match kraje.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\176774 Lookup i Fuzzy Lookup krajów\Lookup No Match kraje.Inputs[OLE DB Destination Input].Columns[movie_id]"
+                      cachedDataType="i4"
+                      cachedName="movie_id"
+                      externalMetadataColumnId="Package\176774 Lookup i Fuzzy Lookup krajów\Lookup No Match kraje.Inputs[OLE DB Destination Input].ExternalColumns[movie_id]"
+                      lineageId="Package\176774 Lookup i Fuzzy Lookup krajów\Źródło country_dirty_test.Outputs[OLE DB Source Output].Columns[movie_id]" />
+                    <inputColumn
+                      refId="Package\176774 Lookup i Fuzzy Lookup krajów\Lookup No Match kraje.Inputs[OLE DB Destination Input].Columns[source_id]"
+                      cachedDataType="i4"
+                      cachedName="source_id"
+                      externalMetadataColumnId="Package\176774 Lookup i Fuzzy Lookup krajów\Lookup No Match kraje.Inputs[OLE DB Destination Input].ExternalColumns[source_id]"
+                      lineageId="Package\176774 Lookup i Fuzzy Lookup krajów\Źródło country_dirty_test.Outputs[OLE DB Source Output].Columns[source_id]" />
+                    <inputColumn
+                      refId="Package\176774 Lookup i Fuzzy Lookup krajów\Lookup No Match kraje.Inputs[OLE DB Destination Input].Columns[country_name]"
+                      cachedDataType="wstr"
+                      cachedLength="200"
+                      cachedName="country_name"
+                      externalMetadataColumnId="Package\176774 Lookup i Fuzzy Lookup krajów\Lookup No Match kraje.Inputs[OLE DB Destination Input].ExternalColumns[country_name]"
+                      lineageId="Package\176774 Lookup i Fuzzy Lookup krajów\Źródło country_dirty_test.Outputs[OLE DB Source Output].Columns[country_name]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\176774 Lookup i Fuzzy Lookup krajów\Lookup No Match kraje.Inputs[OLE DB Destination Input].ExternalColumns[movie_id]"
+                      dataType="i4"
+                      name="movie_id" />
+                    <externalMetadataColumn
+                      refId="Package\176774 Lookup i Fuzzy Lookup krajów\Lookup No Match kraje.Inputs[OLE DB Destination Input].ExternalColumns[source_id]"
+                      dataType="i4"
+                      name="source_id" />
+                    <externalMetadataColumn
+                      refId="Package\176774 Lookup i Fuzzy Lookup krajów\Lookup No Match kraje.Inputs[OLE DB Destination Input].ExternalColumns[country_name]"
+                      dataType="wstr"
+                      length="200"
+                      name="country_name" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\176774 Lookup i Fuzzy Lookup krajów\Lookup No Match kraje.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\176774 Lookup i Fuzzy Lookup krajów\Lookup No Match kraje.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\176774 Lookup i Fuzzy Lookup krajów\Lookup No Match kraje.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\176774 Lookup i Fuzzy Lookup krajów\Lookup No Match kraje.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\176774 Lookup i Fuzzy Lookup krajów\Lookup No Match kraje.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\176774 Lookup i Fuzzy Lookup krajów\Lookup No Match kraje.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\176774 Lookup i Fuzzy Lookup krajów\Rozdzielenie No Match"
+              componentClassID="Microsoft.Multicast"
+              contactInfo="Multicast;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Distributes every input row to every row in one or more outputs. For example, branch your data flow to make a copy of data so that some values can be masked before sharing with external partners."
+              name="Rozdzielenie No Match">
+              <inputs>
+                <input
+                  refId="Package\176774 Lookup i Fuzzy Lookup krajów\Rozdzielenie No Match.Inputs[Multicast Input 1]"
+                  name="Multicast Input 1">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\176774 Lookup i Fuzzy Lookup krajów\Rozdzielenie No Match.Outputs[Multicast Output 2]"
+                  deleteOutputOnPathDetached="true"
+                  name="Multicast Output 2"
+                  synchronousInputId="Package\176774 Lookup i Fuzzy Lookup krajów\Rozdzielenie No Match.Inputs[Multicast Input 1]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\176774 Lookup i Fuzzy Lookup krajów\Rozdzielenie No Match.Outputs[Multicast Output 1]"
+                  deleteOutputOnPathDetached="true"
+                  name="Multicast Output 1"
+                  synchronousInputId="Package\176774 Lookup i Fuzzy Lookup krajów\Rozdzielenie No Match.Inputs[Multicast Input 1]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\176774 Lookup i Fuzzy Lookup krajów\Rozdzielenie No Match.Outputs[Multicast Output 3]"
+                  dangling="true"
+                  deleteOutputOnPathDetached="true"
+                  name="Multicast Output 3"
+                  synchronousInputId="Package\176774 Lookup i Fuzzy Lookup krajów\Rozdzielenie No Match.Inputs[Multicast Input 1]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\176774 Lookup i Fuzzy Lookup krajów\Źródło country_dirty_test"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Źródło country_dirty_test"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT
+    movie_id,
+    source_id,
+    country_name
+FROM country_dirty_test;</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1250</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\176774 Lookup i Fuzzy Lookup krajów\Źródło country_dirty_test.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-IFD8LT5\WAD.imdb]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-IFD8LT5\WAD.imdb]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\176774 Lookup i Fuzzy Lookup krajów\Źródło country_dirty_test.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\176774 Lookup i Fuzzy Lookup krajów\Źródło country_dirty_test.Outputs[OLE DB Source Output].Columns[movie_id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\176774 Lookup i Fuzzy Lookup krajów\Źródło country_dirty_test.Outputs[OLE DB Source Output].ExternalColumns[movie_id]"
+                      lineageId="Package\176774 Lookup i Fuzzy Lookup krajów\Źródło country_dirty_test.Outputs[OLE DB Source Output].Columns[movie_id]"
+                      name="movie_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\176774 Lookup i Fuzzy Lookup krajów\Źródło country_dirty_test.Outputs[OLE DB Source Output].Columns[source_id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\176774 Lookup i Fuzzy Lookup krajów\Źródło country_dirty_test.Outputs[OLE DB Source Output].ExternalColumns[source_id]"
+                      lineageId="Package\176774 Lookup i Fuzzy Lookup krajów\Źródło country_dirty_test.Outputs[OLE DB Source Output].Columns[source_id]"
+                      name="source_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\176774 Lookup i Fuzzy Lookup krajów\Źródło country_dirty_test.Outputs[OLE DB Source Output].Columns[country_name]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\176774 Lookup i Fuzzy Lookup krajów\Źródło country_dirty_test.Outputs[OLE DB Source Output].ExternalColumns[country_name]"
+                      length="200"
+                      lineageId="Package\176774 Lookup i Fuzzy Lookup krajów\Źródło country_dirty_test.Outputs[OLE DB Source Output].Columns[country_name]"
+                      name="country_name"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\176774 Lookup i Fuzzy Lookup krajów\Źródło country_dirty_test.Outputs[OLE DB Source Output].ExternalColumns[movie_id]"
+                      dataType="i4"
+                      name="movie_id" />
+                    <externalMetadataColumn
+                      refId="Package\176774 Lookup i Fuzzy Lookup krajów\Źródło country_dirty_test.Outputs[OLE DB Source Output].ExternalColumns[source_id]"
+                      dataType="i4"
+                      name="source_id" />
+                    <externalMetadataColumn
+                      refId="Package\176774 Lookup i Fuzzy Lookup krajów\Źródło country_dirty_test.Outputs[OLE DB Source Output].ExternalColumns[country_name]"
+                      dataType="wstr"
+                      length="200"
+                      name="country_name" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\176774 Lookup i Fuzzy Lookup krajów\Źródło country_dirty_test.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\176774 Lookup i Fuzzy Lookup krajów\Źródło country_dirty_test.Outputs[OLE DB Source Error Output].Columns[movie_id]"
+                      dataType="i4"
+                      lineageId="Package\176774 Lookup i Fuzzy Lookup krajów\Źródło country_dirty_test.Outputs[OLE DB Source Error Output].Columns[movie_id]"
+                      name="movie_id" />
+                    <outputColumn
+                      refId="Package\176774 Lookup i Fuzzy Lookup krajów\Źródło country_dirty_test.Outputs[OLE DB Source Error Output].Columns[source_id]"
+                      dataType="i4"
+                      lineageId="Package\176774 Lookup i Fuzzy Lookup krajów\Źródło country_dirty_test.Outputs[OLE DB Source Error Output].Columns[source_id]"
+                      name="source_id" />
+                    <outputColumn
+                      refId="Package\176774 Lookup i Fuzzy Lookup krajów\Źródło country_dirty_test.Outputs[OLE DB Source Error Output].Columns[country_name]"
+                      dataType="wstr"
+                      length="200"
+                      lineageId="Package\176774 Lookup i Fuzzy Lookup krajów\Źródło country_dirty_test.Outputs[OLE DB Source Error Output].Columns[country_name]"
+                      name="country_name" />
+                    <outputColumn
+                      refId="Package\176774 Lookup i Fuzzy Lookup krajów\Źródło country_dirty_test.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\176774 Lookup i Fuzzy Lookup krajów\Źródło country_dirty_test.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\176774 Lookup i Fuzzy Lookup krajów\Źródło country_dirty_test.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\176774 Lookup i Fuzzy Lookup krajów\Źródło country_dirty_test.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\176774 Lookup i Fuzzy Lookup krajów.Paths[Fuzzy Lookup Output]"
+              endId="Package\176774 Lookup i Fuzzy Lookup krajów\Fuzzy kraje.Inputs[OLE DB Destination Input]"
+              name="Fuzzy Lookup Output"
+              startId="Package\176774 Lookup i Fuzzy Lookup krajów\Fuzzy Lookup kraje.Outputs[Fuzzy Lookup Output]" />
+            <path
+              refId="Package\176774 Lookup i Fuzzy Lookup krajów.Paths[Lookup Match Output]"
+              endId="Package\176774 Lookup i Fuzzy Lookup krajów\Lookup Match kraje.Inputs[OLE DB Destination Input]"
+              name="Lookup Match Output"
+              startId="Package\176774 Lookup i Fuzzy Lookup krajów\Lookup dim_country.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\176774 Lookup i Fuzzy Lookup krajów.Paths[Lookup No Match Output]"
+              endId="Package\176774 Lookup i Fuzzy Lookup krajów\Rozdzielenie No Match.Inputs[Multicast Input 1]"
+              name="Lookup No Match Output"
+              startId="Package\176774 Lookup i Fuzzy Lookup krajów\Lookup dim_country.Outputs[Lookup No Match Output]" />
+            <path
+              refId="Package\176774 Lookup i Fuzzy Lookup krajów.Paths[Multicast Output 1]"
+              endId="Package\176774 Lookup i Fuzzy Lookup krajów\Fuzzy Lookup kraje.Inputs[Fuzzy Lookup Input]"
+              name="Multicast Output 1"
+              startId="Package\176774 Lookup i Fuzzy Lookup krajów\Rozdzielenie No Match.Outputs[Multicast Output 1]" />
+            <path
+              refId="Package\176774 Lookup i Fuzzy Lookup krajów.Paths[Multicast Output 2]"
+              endId="Package\176774 Lookup i Fuzzy Lookup krajów\Lookup No Match kraje.Inputs[OLE DB Destination Input]"
+              name="Multicast Output 2"
+              startId="Package\176774 Lookup i Fuzzy Lookup krajów\Rozdzielenie No Match.Outputs[Multicast Output 2]" />
+            <path
+              refId="Package\176774 Lookup i Fuzzy Lookup krajów.Paths[OLE DB Source Output]"
+              endId="Package\176774 Lookup i Fuzzy Lookup krajów\Lookup dim_country.Inputs[Lookup Input]"
+              name="OLE DB Source Output"
+              startId="Package\176774 Lookup i Fuzzy Lookup krajów\Źródło country_dirty_test.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\176774 Przygotowanie krajów do Lookup"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{376E3046-8ADE-42C5-AF68-79B0763001E2}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="176774 Przygotowanie krajów do Lookup"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{CB19429E-7349-4AEE-9D36-651F3065F5DE}"
+          SQLTask:BypassPrepare="False"
+          SQLTask:SqlStatementSource="DELETE FROM bridge_movie_country;&#xA;DELETE FROM dim_country;&#xA;&#xA;DBCC CHECKIDENT ('dim_country', RESEED, 0);&#xA;&#xA;DROP TABLE IF EXISTS stg_movie_country;&#xA;DROP TABLE IF EXISTS country_dirty_test;&#xA;DROP TABLE IF EXISTS country_lookup_match;&#xA;DROP TABLE IF EXISTS country_lookup_no_match;&#xA;DROP TABLE IF EXISTS country_fuzzy_matches;&#xA;&#xA;CREATE TABLE stg_movie_country (&#xA;    movie_id INT,&#xA;    source_id INT,&#xA;    country_name NVARCHAR(200)&#xA;);&#xA;&#xA;CREATE TABLE country_dirty_test (&#xA;    movie_id INT,&#xA;    source_id INT,&#xA;    country_name NVARCHAR(200)&#xA;);&#xA;&#xA;CREATE TABLE country_lookup_match (&#xA;    movie_id INT,&#xA;    country_id INT,&#xA;    country_name NVARCHAR(200)&#xA;);&#xA;&#xA;CREATE TABLE country_lookup_no_match (&#xA;    movie_id INT,&#xA;    source_id INT,&#xA;    country_name NVARCHAR(200)&#xA;);&#xA;&#xA;CREATE TABLE country_fuzzy_matches (&#xA;    movie_id INT,&#xA;    source_id INT,&#xA;    dirty_country_name NVARCHAR(200),&#xA;    matched_country_id INT,&#xA;    matched_country_name NVARCHAR(200),&#xA;    similarity FLOAT,&#xA;    confidence FLOAT&#xA;);&#xA;&#xA;;WITH sample_movies AS (&#xA;    SELECT TOP (5000)&#xA;        id,&#xA;        production_countries&#xA;    FROM staging_movies&#xA;    WHERE production_countries IS NOT NULL&#xA;      AND LTRIM(RTRIM(production_countries)) &lt;&gt; ''&#xA;      AND LTRIM(RTRIM(production_countries)) &lt;&gt; 'NA'&#xA;      AND LTRIM(RTRIM(production_countries)) &lt;&gt; 'Unknown'&#xA;    ORDER BY id&#xA;)&#xA;INSERT INTO stg_movie_country (&#xA;    movie_id,&#xA;    source_id,&#xA;    country_name&#xA;)&#xA;SELECT DISTINCT&#xA;    dm.movie_id,&#xA;    sm.id AS source_id,&#xA;    LTRIM(RTRIM(split_country.value)) AS country_name&#xA;FROM sample_movies sm&#xA;JOIN dim_movie dm&#xA;    ON sm.id = dm.source_id&#xA;CROSS APPLY STRING_SPLIT(sm.production_countries, ',') AS split_country&#xA;WHERE LTRIM(RTRIM(split_country.value)) &lt;&gt; ''&#xA;  AND LTRIM(RTRIM(split_country.value)) &lt;&gt; 'NA'&#xA;  AND LTRIM(RTRIM(split_country.value)) &lt;&gt; 'Unknown';&#xA;&#xA;INSERT INTO dim_country (country_name)&#xA;SELECT DISTINCT country_name&#xA;FROM stg_movie_country&#xA;WHERE country_name IS NOT NULL&#xA;  AND LTRIM(RTRIM(country_name)) &lt;&gt; ''&#xA;&#xA;UNION&#xA;&#xA;SELECT 'United States of America'&#xA;&#xA;UNION&#xA;&#xA;SELECT 'United Kingdom'&#xA;&#xA;UNION&#xA;&#xA;SELECT 'South Korea'&#xA;&#xA;UNION&#xA;&#xA;SELECT 'Canada';&#xA;&#xA;INSERT INTO country_dirty_test (&#xA;    movie_id,&#xA;    source_id,&#xA;    country_name&#xA;)&#xA;SELECT&#xA;    movie_id,&#xA;    source_id,&#xA;    country_name&#xA;FROM stg_movie_country;&#xA;&#xA;INSERT INTO country_dirty_test (&#xA;    movie_id,&#xA;    source_id,&#xA;    country_name&#xA;)&#xA;SELECT TOP 20&#xA;    movie_id,&#xA;    source_id,&#xA;    'United Stats of America'&#xA;FROM stg_movie_country&#xA;WHERE country_name = 'United States of America';&#xA;&#xA;INSERT INTO country_dirty_test (&#xA;    movie_id,&#xA;    source_id,&#xA;    country_name&#xA;)&#xA;SELECT TOP 20&#xA;    movie_id,&#xA;    source_id,&#xA;    'United Kingdm'&#xA;FROM stg_movie_country&#xA;WHERE country_name = 'United Kingdom';&#xA;&#xA;INSERT INTO country_dirty_test (&#xA;    movie_id,&#xA;    source_id,&#xA;    country_name&#xA;)&#xA;SELECT TOP 20&#xA;    movie_id,&#xA;    source_id,&#xA;    'Soth Korea'&#xA;FROM stg_movie_country&#xA;WHERE country_name = 'South Korea';&#xA;&#xA;INSERT INTO country_dirty_test (&#xA;    movie_id,&#xA;    source_id,&#xA;    country_name&#xA;)&#xA;SELECT TOP 20&#xA;    movie_id,&#xA;    source_id,&#xA;    'Canda'&#xA;FROM stg_movie_country&#xA;WHERE country_name = 'Canada';" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\176774 Ładowanie bridge_movie_country"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{3714BA4C-A16B-4D56-B719-81D62531C380}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="176774 Ładowanie bridge_movie_country"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{CB19429E-7349-4AEE-9D36-651F3065F5DE}"
+          SQLTask:BypassPrepare="False"
+          SQLTask:SqlStatementSource="INSERT INTO bridge_movie_country (movie_id, country_id)&#xA;SELECT DISTINCT&#xA;    movie_id,&#xA;    country_id&#xA;FROM country_lookup_match&#xA;WHERE movie_id IS NOT NULL&#xA;  AND country_id IS NOT NULL&#xA;&#xA;UNION&#xA;&#xA;SELECT DISTINCT&#xA;    movie_id,&#xA;    matched_country_id AS country_id&#xA;FROM country_fuzzy_matches&#xA;WHERE movie_id IS NOT NULL&#xA;  AND matched_country_id IS NOT NULL&#xA;  AND similarity &gt;= 0.20;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{DB9BB98C-B3ED-473D-A989-5BEA6638B006}"
+      DTS:From="Package\176774 Przygotowanie krajów do Lookup"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\176774 Lookup i Fuzzy Lookup krajów" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{FC212052-ADA8-40DF-BF6B-54090E70E885}"
+      DTS:From="Package\176774 Lookup i Fuzzy Lookup krajów"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\176774 Ładowanie bridge_movie_country" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="280,42"
+          Id="Package\176774 Przygotowanie krajów do Lookup"
+          TopLeft="99,47" />
+        <NodeLayout
+          Size="266,42"
+          Id="Package\176774 Lookup i Fuzzy Lookup krajów"
+          TopLeft="103,138" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="237.5,89">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,49"
+              Start="0,0"
+              End="0,41.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,41.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="283,42"
+          Id="Package\176774 Ładowanie bridge_movie_country"
+          TopLeft="102,239" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="239.75,180">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59"
+              Start="0,0"
+              End="0,51.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,51.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\176774 Lookup i Fuzzy Lookup krajów">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="200,42"
+          Id="Package\176774 Lookup i Fuzzy Lookup krajów\Źródło country_dirty_test"
+          TopLeft="197.666666666667,57.5555555555556" />
+        <NodeLayout
+          Size="178,42"
+          Id="Package\176774 Lookup i Fuzzy Lookup krajów\Lookup dim_country"
+          TopLeft="212,132" />
+        <EdgeLayout
+          Id="Package\176774 Lookup i Fuzzy Lookup krajów.Paths[OLE DB Source Output]"
+          TopLeft="299.333333333333,99.5555555555556">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,32.4444444444444"
+              Start="0,0"
+              End="0,24.9444444444444">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.9444444444444" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="192,42"
+          Id="Package\176774 Lookup i Fuzzy Lookup krajów\Lookup No Match kraje"
+          TopLeft="407.888888888889,305.111111111111" />
+        <NodeLayout
+          Size="192,42"
+          Id="Package\176774 Lookup i Fuzzy Lookup krajów\Rozdzielenie No Match"
+          TopLeft="586.333333333333,200.333333333333" />
+        <NodeLayout
+          Size="174,42"
+          Id="Package\176774 Lookup i Fuzzy Lookup krajów\Fuzzy Lookup kraje"
+          TopLeft="655.777777777778,312.777777777778" />
+        <NodeLayout
+          Size="175,42"
+          Id="Package\176774 Lookup i Fuzzy Lookup krajów\Lookup Match kraje"
+          TopLeft="141.111111111111,217.777777777778" />
+        <EdgeLayout
+          Id="Package\176774 Lookup i Fuzzy Lookup krajów.Paths[Lookup Match Output]"
+          TopLeft="301,174">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-72.3888888888888,43.7777777777778"
+              Start="0,0"
+              End="-72.3888888888888,36.2777777777778">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.8888888888889" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,17.8888888888889"
+                    Point2="0,21.8888888888889"
+                    Point3="-4,21.8888888888889" />
+                  <mssgle:LineSegment
+                    End="-68.3888888888888,21.8888888888889" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-68.3888888888888,21.8888888888889"
+                    Point2="-72.3888888888888,21.8888888888889"
+                    Point3="-72.3888888888888,25.8888888888889" />
+                  <mssgle:LineSegment
+                    End="-72.3888888888888,36.2777777777778" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-84.3858311631944,26.8888888888889,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\176774 Lookup i Fuzzy Lookup krajów.Paths[Lookup No Match Output]"
+          TopLeft="329.333333333333,174">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="353,26.3333333333333"
+              Start="0,0"
+              End="353,18.8333333333333">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,6.67409057164068" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,6.67409057164068"
+                    Point2="0,10.6740905716407"
+                    Point3="4,10.6740905716407" />
+                  <mssgle:LineSegment
+                    End="349,10.6740905716407" />
+                  <mssgle:CubicBezierSegment
+                    Point1="349,10.6740905716407"
+                    Point2="353,10.6740905716407"
+                    Point3="353,14.6740905716407" />
+                  <mssgle:LineSegment
+                    End="353,18.8333333333333" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="120.69361328125,15.6740905716407,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\176774 Lookup i Fuzzy Lookup krajów.Paths[Multicast Output 2]"
+          TopLeft="682.333333333333,242.333333333333">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-178.444444444444,62.7777777777778"
+              Start="0,0"
+              End="-178.444444444444,55.2777777777778">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,27.3888888888889" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,27.3888888888889"
+                    Point2="0,31.3888888888889"
+                    Point3="-4,31.3888888888889" />
+                  <mssgle:LineSegment
+                    End="-174.444444444444,31.3888888888889" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-174.444444444444,31.3888888888889"
+                    Point2="-178.444444444444,31.3888888888889"
+                    Point3="-178.444444444444,35.3888888888889" />
+                  <mssgle:LineSegment
+                    End="-178.444444444444,55.2777777777778" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\176774 Lookup i Fuzzy Lookup krajów.Paths[Multicast Output 1]"
+          TopLeft="713,242.333333333333">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="29.7777777777778,70.4444444444445"
+              Start="0,0"
+              End="29.7777777777778,62.9444444444445">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.5270890725436" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,24.5270890725436"
+                    Point2="0,28.5270890725436"
+                    Point3="4,28.5270890725436" />
+                  <mssgle:LineSegment
+                    End="25.7777777777778,28.5270890725436" />
+                  <mssgle:CubicBezierSegment
+                    Point1="25.7777777777778,28.5270890725436"
+                    Point2="29.7777777777778,28.5270890725436"
+                    Point3="29.7777777777778,32.5270890725436" />
+                  <mssgle:LineSegment
+                    End="29.7777777777778,62.9444444444445" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="135,42"
+          Id="Package\176774 Lookup i Fuzzy Lookup krajów\Fuzzy kraje"
+          TopLeft="663.333333333333,397.777777777778" />
+        <EdgeLayout
+          Id="Package\176774 Lookup i Fuzzy Lookup krajów.Paths[Fuzzy Lookup Output]"
+          TopLeft="742.777777777778,354.777777777778">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-11.9444444444446,43"
+              Start="0,0"
+              End="-11.9444444444446,35.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,17.5"
+                    Point2="0,21.5"
+                    Point3="-4,21.5" />
+                  <mssgle:LineSegment
+                    End="-7.94444444444457,21.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-7.94444444444457,21.5"
+                    Point2="-11.9444444444446,21.5"
+                    Point3="-11.9444444444446,25.5" />
+                  <mssgle:LineSegment
+                    End="-11.9444444444446,35.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\176774 Lookup i Fuzzy Lookup krajów\Źródło country_dirty_test">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\176774 Lookup i Fuzzy Lookup krajów\Lookup dim_country">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\176774 Lookup i Fuzzy Lookup krajów\Lookup No Match kraje">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\176774 Lookup i Fuzzy Lookup krajów\Fuzzy Lookup kraje">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\176774 Lookup i Fuzzy Lookup krajów\Lookup Match kraje">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\176774 Lookup i Fuzzy Lookup krajów\Fuzzy kraje">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
